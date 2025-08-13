@@ -2,30 +2,30 @@
 
 import { useState } from 'react';
 
-export default function FlightSearchHero() {
+export default function HotelSearchHero() {
   const [tripType, setTripType] = useState('round');
 
   return (
     <div
-      className="relative bg-cover bg-center h-[650px] flex items-center justify-center px-4"
-      style={{ backgroundImage: "url('images/Group 686.jpg')" }} // Put your image in public/plane-bg.jpg
+      className="relative bg-cover bg-center h-[660px] flex items-center justify-center px-4"
+      style={{ backgroundImage: "url('images/wmremove-transformed-(4).jpg')" }} // Put your image in public/plane-bg.jpg
     >
       <div className="absolute inset-0 bg-opacity-30" />
 
       <div className="relative z-10 flex justify-between items-center w-full max-w-7xl mx-auto gap-8">
         {/* Left Side Text */}
-        <div className="text-white align-middle pt-10">
+        {/* <div className="text-white align-middle pt-10">
           <h1 className=" text-4xl md:text-5xl font-bold mb-4">The Sky is Waiting for You</h1>
           <p className="text-lg max-w-md">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
           </p>
-        </div>
+        </div> */}
 
         {/* Right Side Form */}
-        <div className="w-full md:w-[420px] ml-auto backdrop-blur-md bg-white/60 rounded-3xl p-6 shadow-xl">
+        {/* <div className="w-full md:w-[420px] ml-auto backdrop-blur-md bg-white/60 rounded-3xl p-6 shadow-xl">
           <h2 className="text-xl font-semibold mb-6">Search Flights</h2>
 
-          {/* Trip Type */}
+          {/* Trip Type 
           <div className="flex space-x-4 mb-6">
             {['round', 'one', 'multi'].map((type) => (
               <label key={type} className="flex items-center space-x-1 text-sm capitalize">
@@ -41,7 +41,7 @@ export default function FlightSearchHero() {
             ))}
           </div>
 
-          {/* From / To */}
+          {/* From / To 
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
               <label className="block text-[10px] font-semibold mb-2">From*</label>
@@ -55,7 +55,7 @@ export default function FlightSearchHero() {
             </div>
           </div>
 
-          {/* Dates */}
+          {/* Dates 
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
               <label className="block text-xs font-semibold mb-2">Departure Date*</label>
@@ -68,7 +68,7 @@ export default function FlightSearchHero() {
             </div>
           </div>
 
-          {/* Passenger Counts */}
+          {/* Passenger Counts 
           <div className="grid grid-cols-3 gap-4 mb-6">
             <div>
               <label className="block text-[11px] font-semibold mb-2">Adults (12+ Yrs)</label>
@@ -96,7 +96,7 @@ export default function FlightSearchHero() {
             </div>
           </div>
 
-          {/* Class & Phone */}
+          {/* Class & Phone 
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
               <label className="block text-xs font-semibold mb-2">Class*</label>
@@ -122,7 +122,7 @@ export default function FlightSearchHero() {
               Submit
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

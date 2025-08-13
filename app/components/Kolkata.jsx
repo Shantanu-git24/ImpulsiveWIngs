@@ -36,12 +36,32 @@ const Kolkata = () => {
 
             <div className="max-w-7xl mx-auto px-4 relative">
                 {/* Custom Nav Buttons */}
-                <div ref={prevRef} className="custom-nav-button  left-[-20px] absolute top-1/2 z-10 hidden md:flex"  >
-                    <span className='bg-[#1CA8CB]  ' style={{ cursor: "pointer", width: "25px", borderRadius: "20px", color: "white" }}>&lt;</span>
-                </div>
-                <div ref={nextRef} className="custom-nav-button right-[-20px] absolute top-1/2 z-10 hidden md:flex">
-                    <span className='bg-[#1CA8CB]  ' style={{ cursor: "pointer", width: "25px", borderRadius: "20px", color: "white" }}>&gt;</span>
-                </div>
+                {/* Custom Navigation Buttons */}
+        <div
+          ref={prevRef}
+          className="custom-swiper-button absolute top-1/2 z-10 flex 
+             left-[-20px] md:left-[-20px] lg:left-0"
+        >
+          <span
+            className="bg-[#1CA8CB]"
+            style={{ cursor: 'pointer', width: '25px', borderRadius: '20px', color: 'white' }}
+          >
+            &lt;
+          </span>
+        </div>
+
+        <div
+          ref={nextRef}
+          className="custom-swiper-button absolute top-1/2 z-10 flex 
+             right-[-20px] md:right-[-20px] lg:right-0"
+        >
+          <span
+            className="bg-[#1CA8CB]"
+            style={{ cursor: 'pointer', width: '25px', borderRadius: '20px', color: 'white' }}
+          >
+            &gt;
+          </span>
+        </div>
 
                 <Swiper
                     slidesPerView={4}
@@ -89,7 +109,7 @@ const Kolkata = () => {
                         
                                                         {/* Hover button */}
                                                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                            <button className="bg-white text-[#0094da] font-semibold w-full py-2 rounded-md  transition cursor-pointer" onClick={() => setShowPopup(true)}>
+                                                            <button className="bg-white text-[#0094da] font-semibold w-40 py-2 rounded-md  transition cursor-pointer" onClick={() => setShowPopup(true)}>
                                                                 Plan a Trip
                                                             </button>
                                                         </div>

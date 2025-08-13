@@ -5,7 +5,7 @@ export default function NewsletterSection() {
   return (
     <section className="border-t border-b py-8 px-4 w-full">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6">
-        <h2 className="text-xl md:text-2xl font-semibold text-center lg:text-left">
+        <h2 className="text-[15px] md:text-2xl font-semibold text-center lg:text-left">
           Get Updated The Latest Newsletter
         </h2>
 

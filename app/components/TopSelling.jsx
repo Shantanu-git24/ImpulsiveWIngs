@@ -120,8 +120,9 @@ const TopSellingTours = () => {
                         swiper.params.navigation.nextEl = nextRef.current;
                     }}
                     spaceBetween={20}
-                    slidesPerView={4}
+                    slidesPerView={1} // default for smallest screens
                     breakpoints={{
+                        450: { slidesPerView: 1.3 },
                         640: { slidesPerView: 1.5 },
                         768: { slidesPerView: 2 },
                         1024: { slidesPerView: 3 },
@@ -132,7 +133,7 @@ const TopSellingTours = () => {
                     {tours.map((tour, id) => (
                         <SwiperSlide key={id}>
                             <Link href={`/details/${tour.id}`} passHref>
-                                <div className="rounded-xl overflow-hidden shadow-lg bg-white w-[300px] mx-auto h-[430px] flex flex-col justify-between">
+                                <div className="rounded-xl overflow-hidden shadow-lg bg-white w-[300px] mx-auto h-[420px] flex flex-col justify-between">
                                     <div>
                                         <Image
                                             src={`https://application.impulsivewings.in/${tour.package.thumbnail}` || '/images/fallback.jpg'}
@@ -142,7 +143,7 @@ const TopSellingTours = () => {
                                             className="object-cover w-full h-[200px]"
                                         />
                                         <div className="text-center">
-                                            <h3 className="font-semibold text-[16px] mb-2 line-clamp-2 px-2 text-left pt-2 min-h-[48px]">
+                                            <h3 className="font-semibold text-[16px] mb-2 px-2 text-left pt-2 min-h-[32px] truncate whitespace-nowrap overflow-hidden">
                                                 {tour.package.name}
                                             </h3>
                                             <div className="flex items-center px-2 py-2 gap-2 text-sm mb-1">
@@ -154,7 +155,7 @@ const TopSellingTours = () => {
                                                 <span>🟢 Transfers</span>
                                                 <span>🟢 {tour.features[2] || '5 Activities'}</span>
                                             </div>
-                                            <div className="flex gap-2 mb-3 px-2 py-2">
+                                            <div className="flex gap-2  px-2 py-2">
                                                 <span className="text-gray-700 text-sm bg-gray-100 px-2 py-1 rounded">{tour.months[0]}</span>
                                                 <span className="text-gray-700 text-sm bg-gray-100 px-2 py-1 rounded">{tour.months[1]}</span>
                                                 <span className="text-gray-700 text-sm bg-gray-100 px-2 py-1 rounded">{tour.months[2]}</span>
@@ -174,11 +175,11 @@ const TopSellingTours = () => {
                             </Link>
 
                             {/* PDF Button (placed outside the card) */}
-                            <div className="py-3 text-center">
+                            {/* <div className="py-3 text-center">
                                 <button className="border border-blue-500 text-blue-500 px-4 py-1 rounded-full">
                                     View PDF
                                 </button>
-                            </div>
+                            </div> */}
                         </SwiperSlide>
 
                     ))}

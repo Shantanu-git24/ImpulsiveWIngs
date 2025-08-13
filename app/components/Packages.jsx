@@ -132,7 +132,7 @@ export default function PackagesPage() {
                                                 className="w-full h-full object-cover"
                                             />
                                             <div className="p-3">
-                                                <h5 className="font-semibold text-gray-800 mb-1 line-clamp-2">{pkg.name}</h5>
+                                                <h5 className="font-semibold text-gray-800 mb-1 line-clamp-1">{pkg.name}</h5>
 
                                                 <div className="flex items-center gap-2 text-sm text-gray-800 mb-3">
                                                     <span className="text-lg font-bold text-green-700">₹ {pkg.price}</span>

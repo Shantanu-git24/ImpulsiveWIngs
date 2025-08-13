@@ -74,20 +74,8 @@ export default function Footer() {
 
                 {/* Address */}
                 <div>
-                    <h3 className="font-semibold text-lg mb-3">Address</h3>
+                    <h3 className="font-semibold text-lg mb-3">ImpulsiveWings Biz Llp</h3>
                     <ul className="space-y-4 text-sm text-gray-700">
-                        <li className="flex items-start space-x-2 ">
-                            <FaPhoneAlt className="text-blue-400 mt-1" />
-                            <span>
-                                033 6902 8513 <br />
-                            </span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                            <FaEnvelope className="text-blue-400 mt-1" />
-                            <span>
-                                care@impulsivewings.in
-                            </span>
-                        </li>
                         <li className="flex items-start space-x-2">
                             <FaMapMarkerAlt className="text-blue-400 mt-1" />
                             <span>
@@ -100,6 +88,22 @@ export default function Footer() {
                                 41B S.P. Mukherjee Road, Kolkata-700026
                             </span>
                         </li>
+                        <li className="flex items-start space-x-2">
+                            <FaEnvelope className="text-blue-400 mt-1" />
+                            <a href="mailto:care@impulsivewings.in">
+                                care@impulsivewings.in
+                            </a>
+                        </li>
+
+                        <li className="flex items-start space-x-2">
+                            <FaPhoneAlt className="text-blue-400 mt-1" />
+                            <a href="tel:03369028513" >
+                                033 6902 8513
+                            </a>
+                        </li>
+
+
+
                     </ul>
                 </div>
 

@@ -9,31 +9,31 @@ const dummyData = {
       title: "Delhi → Mumbai",
       description: "IndiGo | Non-stop | 2h",
       price: "3500",
-      logo: "/images/indigo.png",
+      logo: "/images/Air-India-Express.jpg",
     },
     {
       title: "Bangalore → Chennai",
       description: "SpiceJet | 1 Stop | 3h",
       price: "2800",
-      logo: "/images/spicejet.png",
+      logo: "/images/Akasa.jpg",
     },
     {
       title: "Kolkata → Guwahati",
       description: "AirAsia | Direct | 1h 30m",
       price: "1900",
-      logo: "/images/air-asia.png",
+      logo: "/images/Indigo.jpg",
     },
      {
       title: "Bangalore → Chennai",
       description: "SpiceJet | 1 Stop | 3h",
       price: "2800",
-      logo: "/images/spicejet.png",
+      logo: "/images/Akasa.jpg",
     },
      {
       title: "Bangalore → Chennai",
       description: "SpiceJet | 1 Stop | 3h",
       price: "2800",
-      logo: "/images/spicejet.png",
+      logo: "/images/Air-India-Logo.jpg",
     },
   ],
   international: [
@@ -41,19 +41,37 @@ const dummyData = {
       title: "Delhi → Dubai",
       description: "Emirates | Non-stop | 4h",
       price: "13500",
-      logo: "/images/emirates.png",
+      logo: "/images/Etihad.jpg",
     },
     {
       title: "Mumbai → Singapore",
       description: "Singapore Airlines | 5h 10m",
       price: "15000",
-      logo: "/images/singapore.png",
+      logo: "/images/Air-Asia.jpg",
     },
     {
       title: "Chennai → Colombo",
       description: "SriLankan Airlines | 3h 20m",
       price: "8700",
-      logo: "/images/srilankan.png",
+      logo: "/images/Kuwait.jpg",
+    },
+    {
+      title: "Mumbai → Singapore",
+      description: "Singapore Airlines | 5h 10m",
+      price: "15000",
+      logo: "/images/Qatar.jpg",
+    },
+     {
+      title: "Chennai → Colombo",
+      description: "SriLankan Airlines | 3h 20m",
+      price: "8700",
+      logo: "/images/Saudia.jpg",
+    },
+     {
+      title: "Mumbai → Singapore",
+      description: "Singapore Airlines | 5h 10m",
+      price: "15000",
+      logo: "/images/Emirates.jpg",
     },
   ],
 };
@@ -154,12 +172,12 @@ const FlightTabs = () => {
                       <img
                         src={flight.logo}
                         alt="airline-logo"
-                        className="h-15 w-auto mb-4"
+                        className="h-20 w-auto mb-4"
                       />
                       <h3 className="text-xl font-bold text-gray-800 mb-2">{flight.title}</h3>
                       <p className="text-gray-500 text-sm">{flight.description}</p>
                     </div>
-                    <div className="mt-6">
+                    <div className="mt-6 text-center">
                       <p className="text-blue-600 text-lg font-semibold">₹{flight.price}</p>
                     </div>
                   </div>

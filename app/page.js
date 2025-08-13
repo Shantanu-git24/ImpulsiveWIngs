@@ -47,7 +47,8 @@ export default function Home() {
         <Header />
 
           <div
-      className="relative bg-cover bg-center h-[650px] flex items-center justify-center px-4"
+      className="relative bg-center h-[650px] flex items-center justify-center px-4 bg-no-repeat
+             bg-contain sm:bg-cover"
       style={{
         backgroundImage: bgImageUrl ? `url(${bgImageUrl})` : 'none',
       }}
@@ -71,13 +72,13 @@ export default function Home() {
               height={300}
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 flex items-center justify-center">
+            {/* <div className="absolute inset-0 flex items-center justify-center">
               <button className="bg-white rounded-full p-4 shadow-lg">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-6.518-3.756A1 1 0 007 8.118v7.764a1 1 0 001.234.97l6.518-3.756a1 1 0 000-1.764z" />
                 </svg>
               </button>
-            </div>
+            </div> */}
           </div>
 
           <div>

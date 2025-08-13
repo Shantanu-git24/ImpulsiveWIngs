@@ -5,21 +5,21 @@ import { Calendar, Clock, ChevronDown, Globe } from "lucide-react";
 export default function HeroCorporate() {
   return (
     <section
-      className="relative bg-cover bg-center py-20 px-4 md:px-16"
+      className="relative bg-cover bg-center py-20 px-4 md:px-16 h-[580px]"
       style={{ backgroundImage: "url('images/Group 687.png')" }}
     >
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Left Text */}
         <div className="text-white max-w-xl">
-          <h1 className="text-4xl font-bold mb-4">Lorem Ipsum is text</h1>
-          <p className="text-lg mb-6">Give your team stories they will always treasure!</p>
-          <ul className="space-y-3 text-base">
+          <h1 className="text-4xl font-bold mb-4">Smarter Business Travel Starts Here.</h1>
+          <p className="text-lg mb-6">Streamline your business trips with our smart booking platform. Save time. Save costs. Travel better.</p>
+          {/* <ul className="space-y-3 text-base">
             <li className="flex items-center gap-2"><Calendar className="w-7 h-7" /> Unique Travel & Event Plans</li>
             <li className="flex items-center gap-2"><Clock className="w-7 h-7"/> End-to-End Support</li>
             <li className="flex items-center gap-2"><Globe className="w-7 h-7"/>Trusted Partners</li>
-          </ul>
+          </ul> */}
           <button className="mt-6 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-full">
-            Schedule A Callback
+            Start Booking
           </button>
         </div>
 
@@ -61,20 +61,20 @@ export default function HeroCorporate() {
             </button>
           </div>
         </div> */}
-        <div className="w-full md:w-[420px] ml-auto backdrop-blur-md bg-white/60 rounded-3xl p-6 shadow-xl">
-          <h2 className="text-xl font-bold mb-4">Schedule a callback now!</h2>
-          <p className="text-sm text-gray-600 mb-4 font-medium">Your Details*</p>
+        <div className="w-full md:w-[420px] h-[450px] ml-auto backdrop-blur-md bg-white/60 rounded-3xl p-6 shadow-xl">
+          <h2 className="text-xl font-bold ">Schedule a callback now!</h2>
+          <p className="text-sm text-gray-600 font-medium ">Your Details*</p>
           {/* From / To */}
-          <div className="space-y-3 mb-4">
+          <div className="space-y-3 mb-2">
             <input type="text" placeholder="Enter Full Name" className="w-full border text-sm bg-white border-[#0094DA] rounded px-3 py-2" />
           </div>
-          <div className="space-y-3 mb-4">
+          <div className="space-y-3 mb-2">
             <input type="email" placeholder="Enter Your Email ID" className="w-full border text-sm bg-white border-[#0094DA] rounded px-3 py-2"
             />
           </div>
 
           {/* Class & Phone */}
-          <div className="flex gap-2 mb-4 ">
+          <div className="flex gap-2 mb-2 ">
             <div>
               <input type="text" placeholder="Phone Number" className="w-full border text-sm bg-white border-[#0094DA] rounded px-3 py-2" />
             </div>
@@ -86,7 +86,7 @@ export default function HeroCorporate() {
 
           <div>
             <label className="text-sm mb-2 block">What are you looking for?</label>
-            <select className="w-full text-sm border bg-white border-[#0094DA] rounded px-2 py-2 mb-4">
+            <select className="w-full text-sm border bg-white border-[#0094DA] rounded px-2 py-2 mb-2">
               <option>Others</option>
               <option>Corporate Event</option>
               <option>Team Retreat</option>
@@ -105,10 +105,10 @@ export default function HeroCorporate() {
             </div>
           </div>
 
-          <p className="text-xs text-gray-600 italic mb-4">
+          <p className="text-xs text-gray-600 italic mt-1 mb-2">
             * Please select exact number of passengers to view the best prices
           </p>
-          <div className="flex justify-center mt-6">
+          <div className="flex justify-center mt-2">
             <button className=" bg-blue-500 text-white px-16 py-2 rounded-3xl  hover:bg-blue-600 transition">
               Submit
             </button>

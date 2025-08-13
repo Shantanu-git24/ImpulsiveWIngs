@@ -121,7 +121,7 @@ export default function PopularTours() {
           {tours.map((tour, id) => (
             <SwiperSlide key={tour.id}>
               <Link href={`/details/${tour.id}`} passHref>
-                <div className="bg-white rounded-xl shadow-md overflow-hidden relative h-[420px] flex flex-col justify-between">
+                <div className="bg-white rounded-xl shadow-md overflow-hidden relative h-[380px] flex flex-col justify-between">
                   {/* Image */}
                   <div className="relative h-48 w-full">
                     <Image
@@ -137,7 +137,7 @@ export default function PopularTours() {
 
                     {/* Title */}
                     <h3
-                      className="text-lg font-semibold h-[48px] overflow-hidden text-ellipsis line-clamp-2"
+                      className="text-lg font-semibold h-[35px] overflow-hidden text-ellipsis line-clamp-2"
                       style={{
                         display: '-webkit-box',
                         WebkitLineClamp: 2,
@@ -159,12 +159,12 @@ export default function PopularTours() {
                     </p>
 
                     {/* Buttons */}
-                    <div className="flex justify-between items-center  pt-2">
-                      <button
-                        className="bg-white text-[#0094da] border border-[#0094da] cursor-pointer text-sm font-medium py-2 px-4 rounded-full hover:text-white hover:bg-[#0094da] transition"
+                    <div className="flex justify-center items-center  pt-2">
+                      {/* <button
+                        className="bg-white text-[#0094da] border border-[#0094da] cursor-pointer text-[10px] font-medium py-2 px-4 rounded-full hover:text-white hover:bg-[#0094da] transition"
                       >
                         View PDF
-                      </button>
+                      </button> */}
                       <button
                         onClick={() => router.push(`/details/${tour.id}`)}
                         className="bg-[#0094da] text-white text-sm font-medium py-2 px-4 rounded-full transition cursor-pointer"

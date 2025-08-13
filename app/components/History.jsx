@@ -46,26 +46,7 @@ import { motion } from "framer-motion";
 //     },
 // ];
 
-const data = [
-    {
-        title: "Mission",
-        image: "/images/mission.png",
-        content:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-    },
-    {
-        title: "Vision",
-        image: "/images/Vision.png",
-        content:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-    },
-    {
-        title: "Values",
-        image: "/images/Values.png",
-        content:
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-    },
-];
+
 
 export default function Timeline() {
     return (
@@ -76,20 +57,19 @@ export default function Timeline() {
             >
                 <div className="absolute inset-0 bg-opacity-30" />
 
-                <div className="relative z-10 flex justify-between items-center w-full max-w-7xl mx-auto gap-8">
+                <div className="relative z-10  justify-between items-center w-full max-w-7xl  text-center mx-auto gap-8">
                     {/* Left Side Text */}
                     <div className="text-white align-middle pt-10">
-                        <h1 className=" text-4xl md:text-5xl font-bold mb-4">About Us</h1>
-                        <p className="text-sm leading-6 max-w-md">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                        </p>
+                        <h1 className=" text-4xl md:text-5xl font-bold mb-4">Travel with Confidence, Explore with Wonder</h1>
+                        
+                        <p className="text-xl">From first booking to final sunset, we’ve been guiding travelers across the globe for years.</p>
                     </div>
 
 
                 </div>
             </div>
 
-            <div className="relative max-w-6xl mx-auto py-10 mt-4 px-4 md:px-0">
+            
                 {/* Vertical Line 
                 <div className="absolute top-3 left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200 z-0 "></div>
 
@@ -143,26 +123,8 @@ export default function Timeline() {
                         </motion.div>
                     ))}
                 </div> */}
-            </div>
-            {/* <section className="bg-[#d8e2e8] py-14 my-6">
-                <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    {data.map((item, index) => (
-                        <div
-                            key={index}
-                            className="relative flex flex-col items-center px-4"
-                        >
-                            {/* Divider lines between columns (except last) 
-                            {index !== data.length - 1 && (
-                                <div className="hidden md:block absolute right-0 top-6 h-5/5 border-r border-white"></div>
-                            )}
-
-                            <img src={item.image} alt={item.title} className="w-25 h-25 mb-4" />
-                            <h3 className="text-xl font-bold text-[#005c84]">{item.title}</h3>
-                            <p className="text-sm text-gray-700 mt-2">{item.content}</p>
-                        </div>
-                    ))}
-                </div>
-            </section> */}
+            
+           
         </>
     );
 }

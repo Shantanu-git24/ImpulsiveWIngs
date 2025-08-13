@@ -55,7 +55,7 @@ export default function VisaFreeDestinations() {
         >
           {Array.from({ length: Math.ceil(locations.length / 5) }, (_, groupIndex) => (
             <SwiperSlide key={groupIndex}>
-              <div className="grid grid-cols-3 grid-rows-2 gap-6">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {locations
                   .slice(groupIndex * 5, groupIndex * 5 + 5)
                   .map((item, index) => {
@@ -83,7 +83,7 @@ export default function VisaFreeDestinations() {
 
                         <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <button
-                            className="bg-white text-[#0094da] font-semibold w-full py-2 rounded-md transition cursor-pointer"
+                            className="bg-white text-[#0094da] font-semibold w-40 py-2 rounded-md transition cursor-pointer"
                             onClick={() => setShowPopup(true)}
                           >
                             Plan a Trip

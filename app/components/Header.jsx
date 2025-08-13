@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from 'react';
 import Link from "next/link";
 import { Globe, Plane, Hotel, Briefcase } from "lucide-react";
+import { Menu , X } from "lucide-react";
 
 export default function Header() {
 
@@ -19,6 +20,7 @@ export default function Header() {
   const [stayBudget, setStayBudget] = useState([500, 10000]);
   const [totalBudget, setTotalBudget] = useState([5000, 50000]);
   const [formData, setFormData] = useState({ phone: '', email: '', message: '' });
+  const [isOpen, setIsOpen] = useState(false);
 
 
   const groupOptions = [
@@ -41,46 +43,76 @@ export default function Header() {
 
 
   return (
-    <header className="w-full bg-white py-3 shadow-sm">
+    <header className="absolute top-0 left-0 w-full z-50 bg-transparent text-white">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <Link href="/" >
-            <Image src="/images/LOGO.png" alt="Logo" width={120} height={40} />
+  {/* Logo */}
+  <div className="flex items-center space-x-2">
+    <Link href="/" >
+      <Image src="/images/Logo.png" alt="Logo" width={120} height={60} />
+    </Link>
+  </div>
+
+  {/* Nav + Buttons */}
+  <div className="flex items-center space-x-6">
+    {/* Navigation */}
+    <nav className="hidden md:flex space-x-6 text-sm text-gray-700 items-center">
+      <Link href="/packages" className="flex items-center text-white gap-1 hover:text-white cursor-pointer">
+        <Globe className="w-5 h-5" /> <span className="text-[16px]">Packages</span>
+      </Link>
+      <Link href="/flights" className="flex items-center text-white gap-1 hover:text-white cursor-pointer">
+        <Plane className="w-4 h-4" /> <span className="text-[16px]">Flights</span>
+      </Link>
+      <Link href="/hotels" className="flex items-center text-white gap-1 hover:text-white cursor-pointer">
+        <Hotel className="w-4 h-4" /> <span className="text-[16px]">Hotels</span>
+      </Link>
+      <Link href="/corporate" className="flex items-center text-white gap-1 hover:text-white cursor-pointer">
+        <Briefcase className="w-4 h-4" /> <span className="text-[16px]">Corporate Package</span>
+      </Link>
+    </nav>
+
+    {/* Buttons */}
+    <div className="flex space-x-2">
+      <button
+        className="bg-sky-400 hover:bg-sky-400 text-white px-4 py-1 rounded-full font-semibold text-sm cursor-pointer"
+        onClick={() => setShowPopup(true)}
+      >
+        Create a Trip
+      </button>
+      <Link href="https://wealthywings.in/pricing" target="_blank">
+        <button className="bg-sky-400 hover:bg-sky-500 text-white px-4 py-1 font-semibold rounded-full text-sm cursor-pointer">
+          Join Club
+        </button>
+      </Link>
+    </div>
+  </div>
+
+  {/* Mobile Toggle Button */}
+  <button
+    className="md:hidden text-black"
+    onClick={() => setIsOpen(!isOpen)}
+  >
+    {isOpen ? <X size={28} /> : <Menu size={28} />}
+  </button>
+</div>
+
+
+            {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-transparent bg-opacity-90 text-white px-6 py-4 space-y-4">
+          <Link href="/packages" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+            <Globe className="w-5 h-5" /> Packages
+          </Link>
+          <Link href="/flights" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+            <Plane className="w-4 h-4" /> Flights
+          </Link>
+          <Link href="/hotels" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+            <Hotel className="w-4 h-4" /> Hotels
+          </Link>
+          <Link href="/corporate" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
+            <Briefcase className="w-4 h-4" /> Corporate Package
           </Link>
         </div>
-
-        {/* Navigation */}
-        <nav className="hidden md:flex space-x-6 text-sm text-gray-700 items-center">
-          <Link href="/packages" className="flex items-center text-[#0094DA] gap-1 hover:text-[#0094DA] cursor-pointer">
-            <Globe className="w-5 h-5" /> <span className="text-[16px]">Packages</span>
-          </Link>
-          <Link href="/flights" className="flex items-center text-[#0094DA] gap-1 hover:text-[#0094DA] cursor-pointer">
-            <Plane className="w-4 h-4" /> <span className="text-[16px]">Flights</span>
-          </Link>
-          <Link href="/hotels" className="flex items-center text-[#0094DA] gap-1 hover:text-[#0094DA] cursor-pointer">
-            <Hotel className="w-4 h-4" /> <span className="text-[16px]">Hotels</span>
-          </Link>
-          <Link href="/corporate" className="flex items-center text-[#0094DA] gap-1 hover:text-[#0094DA] cursor-pointer">
-            <Briefcase className="w-4 h-4" /> <span className="text-[16px]">Corporate Package</span>
-          </Link>
-          <Link href="/about" className="flex items-center text-[#0094DA] gap-1 hover:text-[#0094DA] cursor-pointer">
-            <Briefcase className="w-4 h-4" /> <span className="text-[16px]">About Us</span>
-          </Link>
-        </nav>
-
-        {/* Buttons */}
-        <div className="flex space-x-2">
-          <button className="bg-sky-400 hover:bg-sky-400 text-white px-4 py-1 rounded-full text-sm cursor-pointer" onClick={() => setShowPopup(true)}>
-            Create a Trip
-          </button>
-          <Link href="https://wealthywings.in/pricing" target="_blank" >
-            <button className="bg-sky-400 hover:bg-sky-500 text-white px-4 py-1 rounded-full text-sm cursor-pointer">
-              Join club
-            </button>
-          </Link>
-        </div>
-      </div>
+      )}
 
 
       {showPopup && (
@@ -113,7 +145,7 @@ export default function Header() {
                       className="w-full border rounded px-3 py-2 mb-3"
                     />
                   ))}
-                  <p onClick={handleAddDestination} className="text-[#0094da] text-sm mt-1 text-center cursor-pointer">
+                  <p onClick={handleAddDestination} className="text-white text-sm mt-1 text-center cursor-pointer">
                     + Add Destination
                   </p>
                 </div>

@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import Link from 'next/link';
 
 export default function UpcomingSlider() {
   const [blogs, setBlogs] = useState([]);
@@ -20,18 +21,18 @@ export default function UpcomingSlider() {
   }, []);
 
   return (
-    <section  className="py-16 bg-cover bg-center bg-no-repeat relative"
-  style={{
-    backgroundImage: "url('/images/Section.png')", // Replace this path
-  }}>
+    <section className="py-16 bg-cover bg-center bg-no-repeat relative"
+      style={{
+        backgroundImage: "url('/images/Section.png')", // Replace this path
+      }}>
       <div className="max-w-7xl mx-auto px-4 text-center mb-12">
-        <h3 className="text-lg text-gray-500" style={{ fontFamily: 'Montez, cursive' ,fontSize:'40px'}}>Upcoming Event</h3>
+        <h3 className="text-lg text-gray-500" style={{ fontFamily: 'Montez, cursive', fontSize: '40px' }}>Upcoming Event</h3>
         <h2 className="text-4xl font-bold text-cyan-900">Virtual Holiday</h2>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 relative">
         <Swiper
-          spaceBetween={30}
+          spaceBetween={20}
           slidesPerView={3}
           navigation={{
             prevEl: prevRef.current,
@@ -47,35 +48,37 @@ export default function UpcomingSlider() {
         >
           {blogs.map((item, idx) => (
             <SwiperSlide key={idx}>
-              <div className="bg-white rounded-2xl  text-left shadow-md">
+              <div className="bg-white rounded-2xl shadow-md flex flex-col items-center text-center p-4">
                 <img
-                   src={`https://application.impulsivewings.in/${item.image}` || '/images/fallback.jpg'}
+                  src={`https://application.impulsivewings.in/${item.image}` || '/images/fallback.jpg'}
                   alt={item.title}
-                  className="rounded-xl h-full w-full object-cover mb-4"
+                  className="rounded-xl w-full object-cover mb-4"
                 />
+
+                <div className="flex flex-col items-center justify-center flex-1">
+                  <h3 className="font-semibold text-cyan-900 text-md mb-4">{item.title}</h3>
+                  <Link href="https://virtualvacation.us/window">
+                    <button className="bg-cyan-500 text-white px-4 py-2 rounded-full cursor-pointer text-sm font-medium hover:bg-cyan-600">
+                      Have a Tour
+                    </button>
+                  </Link>
                 </div>
-                <div className="flex items-center text-sm text-gray-500 gap-4 my-4">
-                  <span>📅 {item.date}</span>
-                  {/* <span>🕒 {item.created_at}</span> */}
-                </div>
-                <h3 className="font-semibold text-cyan-900 text-md mb-4">{item.title}</h3>
-                <button className="bg-cyan-500 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-cyan-600">
-                  Coming Soon
-                </button>
-              
+              </div>
+
+
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* Navigation */}
-        <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
+        {/* <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
           <button
             ref={nextRef}
             className="w-10 h-10 rounded-full bg-cyan-600 text-white shadow hover:bg-cyan-700"
           >
             ➤
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -123,7 +123,7 @@ export default function BaliPackagePage() {
                 {renderTabContent()}
             </div>
 
-            <div className="space-y-6">
+            {/* <div className="space-y-6">
                 <div className="flex gap-2 text-xs">
                     <button className="w-full border border-gray-300 rounded px-4 py-2 text-sm">Contact</button>
                     <button className="w-full border border-gray-300 rounded px-4 py-2 text-sm">Whatsapp</button>
@@ -146,7 +146,7 @@ export default function BaliPackagePage() {
                         ))}
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

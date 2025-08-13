@@ -1,24 +1,32 @@
 import AirFareDeals from '../components/Airfare';
 import HeroSection from '../components/HeroSection';
-import WhyBook from '../components/WhyBook';
+import WhyBookHotel from '../components/WhyBookHotel';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import NewsletterSection from '../components/NewsLetter';
+import HotelSearchHero from '../components/HeroSection';
+import HotelTabs from '../components/Hotelfare';
+import Image from 'next/image';
 
 export default function HotelsPage() {
   return (
     <main>
       <Header />
-      <HeroSection />
-      <WhyBook
-        type="Hotel"
+      <HotelSearchHero />
+      <WhyBookHotel
+        type="Hotels"
         image="/images/image (1).png"
-        content={[
-          "Book top-rated hotels worldwide at the best prices, curated for comfort and luxury.",
-          "Enjoy seamless cancellation, special deals, and round-the-clock customer support.",
-        ]}
+        
       />
-      <AirFareDeals />
+      <HotelTabs />
+      <div className="relative w-full h-[500px]">
+        <Image
+          src="/images/wmremove-transformed-(47).jpg"
+          alt="Banner"
+          layout="fill"
+          priority
+        />
+      </div>
       <NewsletterSection />
       <Footer />
     </main>
