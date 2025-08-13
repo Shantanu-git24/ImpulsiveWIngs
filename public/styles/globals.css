@@ -1,0 +1,24 @@
+/* /styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add your custom classes here */
+.custom-swiper-button {
+  width: 40px;
+  height: 40px;
+  background-color: #e0f0ff;
+  color: #007bff;
+  font-size: 24px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  transition: background-color 0.3s;
+}
+
+.custom-swiper-button:hover {
+  background-color: #cce4ff;
+}
+
