@@ -48,7 +48,7 @@ export default function Header() {
   {/* Logo */}
   <div className="flex items-center space-x-2">
     <Link href="/" >
-      <Image src="/images/Logo.png" alt="Logo" width={120} height={60} />
+      <Image src="/images/LOGO.png" alt="Logo" width={120} height={60} />
     </Link>
   </div>
 

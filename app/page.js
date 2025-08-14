@@ -82,11 +82,11 @@ export default function Home() {
           </div>
 
           <div>
-            <h4 className="text-3xl text-cyan-600 font-medium mb-2">Let&apos; Go Together</h4>
-            <h2 className="text-4xl font-bold mb-4 leading-tight">Plan Your Trip With us</h2>
-            <p className="text-lg text-gray-600 mb-6">At ImpulsiveWings, we make holiday planning effortless and exciting. From the moment you dream of a getaway to the day you return, we handle every detail:</p>
+            <h4 className="text-3xl text-cyan-600 font-medium ">Let&apos; Go Together</h4>
+            <h2 className="text-3xl font-bold mb-2 leading-tight">Plan Your Trip With us</h2>
+            <p className="text-[15px] text-gray-600 mb-3">At ImpulsiveWings, we make holiday planning effortless and exciting. From the moment you dream of a getaway to the day you return, we handle every detail:</p>
 
-            <div className="space-y-4">
+            <div className="space-y-2">
               <div className="flex items-start space-x-4">
                 <div className="bg-cyan-100 p-2 rounded-full">
                   <svg className="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -95,7 +95,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">Discover</h3>
-                  <p className="text-base text-gray-600">Get inspired with personalized destination ideas.</p>
+                  <p className="text-[10px] text-gray-600">Get inspired with personalized destination ideas.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">

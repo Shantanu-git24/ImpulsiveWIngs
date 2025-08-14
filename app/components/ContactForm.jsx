@@ -7,6 +7,17 @@ export default function ContactSection() {
       <Head>
         <title>Contact Us</title>
       </Head>
+      <div
+  className="relative bg-cover bg-center h-[550px] w-full flex items-center justify-center px-4"
+  style={{
+    backgroundImage: "url('/images/contact-banner.jpg')",
+  }}
+>
+        <div className="absolute inset-0  bg-opacity-30" />
+      </div>
+
+
+
       <section className="bg-white py-10 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-8">
@@ -50,7 +61,14 @@ export default function ContactSection() {
                   <label className="block text-sm font-medium mb-1">Write Your Message*</label>
                   <textarea placeholder="Write message" className="w-full border border-blue-400 rounded px-3 py-2 h-32"></textarea>
                 </div>
-                <button type="submit" className="bg-[#0094da] text-white px-6 py-2 rounded-full hover:bg-blue-600">Submit Now</button>
+                <div className="flex justify-center">
+                  <button
+                    type="submit"
+                    className="bg-[#0094da] text-white px-6 py-2 rounded-full hover:bg-blue-600"
+                  >
+                    Submit Now
+                  </button>
+                </div>
               </form>
             </div>
           </div>
@@ -58,15 +76,15 @@ export default function ContactSection() {
           {/* Bottom Info Boxes */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
             <div className="border border-blue-300 p-4 rounded flex items-center gap-4">
-               <div className="w-12 h-12 rounded-full bg-[#0094da] flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-[#0094da] flex items-center justify-center">
                 <div className="relative w-6 h-6">
                   <Image src="/images/vector.png" alt="Email Icon" layout="fill" objectFit="contain" />
                 </div>
               </div>
               <div>
                 <h4 className="font-semibold">Our Address</h4>
-                <p className="text-sm text-gray-600">Lorem Ipsum is dummy text</p>
-                <p className="text-sm text-gray-600">Lorem Ipsum is dummy text</p>
+                <p className="text-sm text-gray-600">5 Ballygunge Circular Road, Kolkata 700019</p>
+                <p className="text-sm text-gray-600">41B S.P. Mukherjee Road, Kolkata-700026</p>
               </div>
             </div>
 
@@ -78,8 +96,11 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-semibold">Email Address</h4>
-                <p className="text-sm text-gray-600">loremipsum@gmail.com</p>
-                <p className="text-sm text-gray-600">loremipsum@gmail.com</p>
+                <a href="mailto:care@impulsivewings.in">
+                  <p className="text-sm text-gray-600">care@impulsivewings.in</p>
+                </a>
+
+                {/* <p className="text-sm text-gray-600">loremipsum@gmail.com</p> */}
               </div>
             </div>
 
@@ -91,8 +112,11 @@ export default function ContactSection() {
               </div>
               <div>
                 <h4 className="font-semibold">Phone Number</h4>
-                <p className="text-sm text-gray-600">+91 00000 00000</p>
-                <p className="text-sm text-gray-600">+91 00000 00000</p>
+                <a href="tel:03369028513" >
+                  <p className="text-sm text-gray-600">033 6902 8513</p>
+                </a>
+
+                {/* <p className="text-sm text-gray-600">+91 00000 00000</p> */}
               </div>
             </div>
           </div>

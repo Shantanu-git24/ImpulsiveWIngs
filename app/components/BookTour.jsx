@@ -4,7 +4,7 @@ export default function BookTourSection() {
   return (
     <section className="w-full">
       {/* Background Image with Form */}
-      <div className="relative w-full h-[600px]">
+      {/* <div className="relative w-full h-[600px]">
         <Image
           src="/images/Booktour.png" // Replace with actual path in public/
           alt="Tour Background"
@@ -23,7 +23,7 @@ export default function BookTourSection() {
             <button type="submit" className="bg-[#0094da] text-white px-4 py-2 rounded hover:bg-blue-600">Send Message</button>
           </form>
         </div>
-      </div>
+      </div> */}
 
       {/* Map Section */}
       <div className="w-full h-[400px] mt-4 p-4">

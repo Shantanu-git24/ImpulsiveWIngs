@@ -65,8 +65,8 @@ export default function Footer() {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/pdf-form" >
-                                › PDF Form
+                            <Link href="/contact" >
+                                › Contact
                             </Link>
                         </li>
                     </ul>
@@ -148,6 +148,9 @@ export default function Footer() {
                         <Link href="/privacy" className="text-white ">Privacy Policy</Link>
                         <span>|</span>
                         <Link href="/disclaimer" className="text-white ">Disclaimer</Link>
+                        <span>|</span>
+                        <Link href="/refund" className="text-white ">Refund</Link>
+                        
                     </div>
 
                     {/* Middle Section - Copyright */}
