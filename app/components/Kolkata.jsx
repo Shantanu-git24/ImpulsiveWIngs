@@ -30,38 +30,51 @@ const Kolkata = () => {
 
 
     return (
-        <section className="py-14 bg-white text-center relative">
+        <section className="py-12 bg-white text-center relative">
             <h3 className="text-cyan-700 text-lg mb-2 " style={{ fontFamily: 'Montez, cursive', fontSize: '40px' }}>Weekend Gateways</h3>
             <h2 className="text-3xl font-bold text-gray-800 mb-8" style={{ fontFamily: 'Manrope, cursive', fontSize: '48px' }}>From Kolkata</h2>
 
             <div className="max-w-7xl mx-auto px-4 relative">
                 {/* Custom Nav Buttons */}
                 {/* Custom Navigation Buttons */}
-        <div
-          ref={prevRef}
-          className="custom-swiper-button absolute top-1/2 z-10 flex 
-             left-[-20px] md:left-[-20px] lg:left-0"
-        >
-          <span
-            className="bg-[#1CA8CB]"
-            style={{ cursor: 'pointer', width: '25px', borderRadius: '20px', color: 'white' }}
-          >
-            &lt;
-          </span>
-        </div>
-
-        <div
-          ref={nextRef}
-          className="custom-swiper-button absolute top-1/2 z-10 flex 
-             right-[-20px] md:right-[-20px] lg:right-0"
-        >
-          <span
-            className="bg-[#1CA8CB]"
-            style={{ cursor: 'pointer', width: '25px', borderRadius: '20px', color: 'white' }}
-          >
-            &gt;
-          </span>
-        </div>
+                <div
+                    ref={prevRef}
+                    className="custom-swiper-button left-[-20px] absolute top-1/2 z-10 hidden md:flex"
+                >
+                    <span
+                        className="bg-[#0094da]"
+                        style={{
+                            cursor: 'pointer',
+                            width: '30px',
+                            height: '30px',
+                            borderRadius: '50%',
+                            color: 'white',
+                            textAlign: 'center',
+                            lineHeight: '30px',
+                        }}
+                    >
+                        &lt;
+                    </span>
+                </div>
+                <div
+                    ref={nextRef}
+                    className="custom-swiper-button right-[-20px] absolute top-1/2 z-10 hidden md:flex"
+                >
+                    <span
+                        className="bg-[#0094da]"
+                        style={{
+                            cursor: 'pointer',
+                            width: '30px',
+                            height: '30px',
+                            borderRadius: '50%',
+                            color: 'white',
+                            textAlign: 'center',
+                            lineHeight: '30px',
+                        }}
+                    >
+                        &gt;
+                    </span>
+                </div>
 
                 <Swiper
                     slidesPerView={4}
@@ -84,42 +97,42 @@ const Kolkata = () => {
                 >
                     {places.map((place, id) => (
                         <SwiperSlide key={id}>
-                                                    <div className="relative group  rounded-xl overflow-hidden shadow-md bg-white cursor-pointer">
-                                                        {/* Image block only takes part of height */}
-                                                        <div className="relative h-[300px] w-full">
-                                                            <Image
-                                                                src={`https://application.impulsivewings.in/${place.image}` || '/images/fallback.jpg'}
-                                                                alt={`Weekend ${place.title}`}
-                                                                fill
-                                                                className="object-cover"
-                                                            />
-                                                            {/* Black overlay inside image container */}
-                                                            <div className="absolute text-left bottom-0 w-full  bg-gradient-to-t from-black/70 to-transparent bg-opacity-60 text-white py-2 px-4">
-                                                                <h4 className="font-semibold text-base pb-2">{place.title || 'Unknown Place'}</h4>
-                                                                <p className="text-sm pb-2">
-                                                                    From ₹<strong>{place.price}</strong>/ - per Person
-                                                                </p>
-                                                               
-                                                            </div>
-                                                            
-                                                        </div>
-                        
-                                                        {/* Price below the image */}
-                        
-                        
-                                                        {/* Hover button */}
-                                                        <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                                            <button className="bg-white text-[#0094da] font-semibold w-40 py-2 rounded-md  transition cursor-pointer" onClick={() => setShowPopup(true)}>
-                                                                Plan a Trip
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </SwiperSlide>
+                            <div className="relative group  rounded-xl overflow-hidden shadow-md bg-white cursor-pointer">
+                                {/* Image block only takes part of height */}
+                                <div className="relative h-[300px] w-full">
+                                    <Image
+                                        src={`https://application.impulsivewings.in/${place.image}` || '/images/fallback.jpg'}
+                                        alt={`Weekend ${place.title}`}
+                                        fill
+                                        className="object-cover"
+                                    />
+                                    {/* Black overlay inside image container */}
+                                    <div className="absolute text-left bottom-0 w-full  bg-gradient-to-t from-black/70 to-transparent bg-opacity-60 text-white py-2 px-4">
+                                        <h4 className="font-semibold text-base pb-2">{place.title || 'Unknown Place'}</h4>
+                                        <p className="text-sm pb-2">
+                                            From ₹<strong>{place.price}</strong>/ - per Person
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                                {/* Price below the image */}
+
+
+                                {/* Hover button */}
+                                <div className="absolute inset-0 bg-black/40 flex items-center justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <button className="bg-white text-[#0094da] font-semibold w-40 py-2 rounded-md  transition cursor-pointer" onClick={() => setShowPopup(true)}>
+                                        Plan a Trip
+                                    </button>
+                                </div>
+                            </div>
+                        </SwiperSlide>
 
 
                     ))}
                 </Swiper>
-                 <PhonePopup isOpen={isPopupOpen} onClose={() => setPopupOpen(false)} />
+                <PhonePopup isOpen={isPopupOpen} onClose={() => setPopupOpen(false)} />
             </div>
         </section>
     );

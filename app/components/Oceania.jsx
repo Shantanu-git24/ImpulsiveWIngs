@@ -77,7 +77,7 @@ export default function OceaniaSlider() {
 
   return (
     <section className="py-4">
-      <div className="max-w-7xl mx-auto px-4 text-center mb-12">
+      <div className="max-w-7xl mx-auto px-4 text-center mb-8">
         {/* <h3 className="text-2xl  text-cyan-700" style={{ fontFamily: 'Montez, cursive',fontSize:'40px' }}>Lorem Ipsum</h3> */}
         <h2 className="text-4xl font-bold" style={{ fontFamily: 'Manrope, cursive', fontSize: '40px' }}>Wildlife Tours</h2>
       </div>
@@ -103,27 +103,40 @@ export default function OceaniaSlider() {
         {/* Navigation Arrow */}
         {/* Custom Navigation Buttons */}
         {/* Custom Navigation Buttons */}
-        <div
+       <div
           ref={prevRef}
-          className="custom-swiper-button absolute top-1/2 z-10 flex 
-             left-[-20px] md:left-[-20px] lg:left-0"
+          className="custom-swiper-button left-[-20px] absolute top-1/2 z-10 hidden md:flex"
         >
           <span
-            className="bg-[#1CA8CB]"
-            style={{ cursor: 'pointer', width: '25px', borderRadius: '20px', color: 'white',textAlign:'center' }}
+            className="bg-[#0094da]"
+            style={{
+              cursor: 'pointer',
+              width: '30px',
+              height: '30px',
+              borderRadius: '50%',
+              color: 'white',
+              textAlign: 'center',
+              lineHeight: '30px',
+            }}
           >
             &lt;
           </span>
         </div>
-
         <div
           ref={nextRef}
-          className="custom-swiper-button absolute top-1/2 z-10 flex 
-             right-[-20px] md:right-[-20px] lg:right-0"
+          className="custom-swiper-button right-[-20px] absolute top-1/2 z-10 hidden md:flex"
         >
           <span
-            className="bg-[#1CA8CB]"
-            style={{ cursor: 'pointer', width: '25px', borderRadius: '20px', color: 'white',textAlign:'center' }}
+            className="bg-[#0094da]"
+            style={{
+              cursor: 'pointer',
+              width: '30px',
+              height: '30px',
+              borderRadius: '50%',
+              color: 'white',
+              textAlign: 'center',
+              lineHeight: '30px',
+            }}
           >
             &gt;
           </span>

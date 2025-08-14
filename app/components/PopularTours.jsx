@@ -40,8 +40,8 @@ export default function PopularTours() {
   }
 
   return (
-    <section className="bg-[#f0f8ff] py-16 px-4">
-      <div className="max-w-7xl mx-auto text-center mb-12">
+    <section className="bg-[#f0f8ff] py-10 px-4">
+      <div className="max-w-7xl mx-auto text-center mb-8">
         <h4
           className="text-cyan-700 text-lg mb-2"
           style={{ fontFamily: 'Montez, cursive', fontSize: '40px' }}
@@ -54,9 +54,9 @@ export default function PopularTours() {
         >
           Most Popular Tour
         </h2>
-        <p className="text-gray-500 max-w-xl mx-auto">
+        {/* <p className="text-gray-500 max-w-xl mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
+        </p> */}
       </div>
 
       <div className="max-w-7xl mx-auto relative px-4">

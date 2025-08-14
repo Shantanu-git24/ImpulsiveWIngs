@@ -21,11 +21,11 @@ export default function UpcomingSlider() {
   }, []);
 
   return (
-    <section className="py-16 bg-cover bg-center bg-no-repeat relative"
+    <section className="py-10 bg-cover bg-center bg-no-repeat relative"
       style={{
         backgroundImage: "url('/images/Section.png')", // Replace this path
       }}>
-      <div className="max-w-7xl mx-auto px-4 text-center mb-12">
+      <div className="max-w-7xl mx-auto px-4 text-center mb-10">
         <h3 className="text-lg text-gray-500" style={{ fontFamily: 'Montez, cursive', fontSize: '40px' }}>Upcoming Event</h3>
         <h2 className="text-4xl font-bold text-cyan-900">Virtual Holiday</h2>
       </div>

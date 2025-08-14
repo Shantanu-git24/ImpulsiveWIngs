@@ -26,20 +26,15 @@ export default function PackageGallery({ packageId = 1 }) {
   }
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-8">
+    <section className="relative max-w-7xl mx-auto px-4  ">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {/* Left: Main image with play icon */}
+        {/* Left: Main image */}
         <div className="relative h-100 md:h-[400px] rounded-lg overflow-hidden">
           <img
             src={`https://application.impulsivewings.in/${images[0]}`}
             alt="Main Image"
             className="w-full h-full object-cover"
           />
-          {/* <div className="absolute inset-0 flex items-center justify-center">
-            <div className="bg-white bg-opacity-80 p-4 rounded-full cursor-pointer hover:scale-105 transition">
-              <FaPlay className="text-[#0094DA] text-2xl" />
-            </div>
-          </div> */}
         </div>
 
         {/* Right: 2x2 grid of images */}
@@ -68,5 +63,6 @@ export default function PackageGallery({ packageId = 1 }) {
         </div>
       </div>
     </section>
+
   );
 }

@@ -28,7 +28,7 @@ export default function VisaFreeDestinations() {
   }, []);
 
   return (
-    <section className=" w-full bg-white text-center relative py-14">
+    <section className=" w-full bg-white text-center relative py-10">
 
       <h2
         className="text-4xl font-bold mb-8"

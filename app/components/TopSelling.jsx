@@ -77,7 +77,7 @@ const TopSellingTours = () => {
 
 
     return (
-        <section className="py-12 text-center">
+        <section className="py-10 text-center">
             <h4 className="text-cyan-700 text-lg font-semibold" style={{ fontFamily: 'Montez, cursive', fontSize: '40px' }}>Explore</h4>
             <h2 className="text-3xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Manrope, cursive', fontSize: '42px' }}>Group Tours from India</h2>
 

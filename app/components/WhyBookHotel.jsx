@@ -24,16 +24,16 @@ export default function WhyBookHotel({ type = 'Flight', image = '/images/image (
         },
     ];
     return (
-        <section className="px-8 pt-10 bg-white">
+        <section className="px-6  lg:px-16 pt-10 bg-white">
             <h2 className="text-3xl font-bold text-center mb-8">Why Book {type} With Us</h2>
-            <div className="flex flex-col md:flex-row items-center gap-8">
-                <div className="md:w-1/2 flex justify-end">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                <div className="flex justify-center lg:justify-end w-full">
                     <Image
                         src={image}
                         alt={`Why Book ${type}`}
-                        width={400}
-                        height={400}
-                        className="object-cover text-right"
+                        width={450}
+                        height={450}
+                        className="object-cover rounded-2xl"
                     />
                 </div>
                 {/* <div className="w-full md:w-1/2 text-gray-700">
@@ -43,12 +43,12 @@ export default function WhyBookHotel({ type = 'Flight', image = '/images/image (
         </div> */}
                 <ul className="space-y-4">
           {features.map((features, index) => (
-            <li key={index} className="flex items-start gap-3">
+            <li key={index} className="flex items-start gap-2 text-left">
               <FaCheckCircle className="text-green-600 flex-shrink-0 mt-1" />
               <p className="text-gray-700">{features.text}</p>
             </li>
           ))}
-          <p className="text-[16px] font-normal text-[#0094da] text-left mb-8 items-end italic" >Fly smarter, easier, and better with ImpulsiveWings.</p>
+          <p className="text-[16px] font-normal text-[#0094da] text-left mb-8 items-end italic" >Book your perfect stay with confidence — only at ImpulsiveWings.</p>
         </ul>
             </div>
         </section>

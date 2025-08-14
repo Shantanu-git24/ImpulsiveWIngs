@@ -12,27 +12,24 @@ import {
 export default function Footer() {
     return (
         <footer className="bg-white border-t border-gray-200 pt-10">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 pb-5 md:grid-cols-3 gap-10">
+            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 pb-5 md:grid-cols-4 gap-10">
                 {/* Logo & Socials */}
                 <div>
                     <img src="/images/LOGO.png" alt="Logo" className="w-32 mb-4" />
                     <p className="text-sm text-gray-600 mb-4">
                         At ImpulsiveWings, we started with a simple belief: no two travellers are the same. From young adventurers and solo explorers to families, couples, and corporate groups — each traveller has a unique purpose, style, and dream.
                     </p>
-                    <div className="flex space-x-4 text-[#0094da]">
-                        <Link href="https://www.facebook.com/myimpulsivewings/" target="_blank">
-                            <FaFacebookF />
-                        </Link>
-                        <Link href="#" target="_blank">
-                            <FaLinkedinIn />
-                        </Link>
-                        <Link href="#" target="_blank">
-                            <FaWhatsapp />
-                        </Link>
-                        <Link href="#" target="_blank">
-                            <FaInstagram />
-                        </Link>
-                    </div>
+                    {/* Left Section - Links */}
+                    {/* <div className="flex space-x-2">
+                        <Link href="/terms" className="text-white ">Terms &amp; Conditions</Link>
+                        <span>|</span>
+                        <Link href="/privacy" className="text-white ">Privacy Policy</Link>
+                        <span>|</span>
+                        <Link href="/disclaimer" className="text-white ">Disclaimer</Link>
+                        <span>|</span>
+                        <Link href="/refund" className="text-white ">Refund</Link>
+                        
+                    </div> */}
                 </div>
 
                 {/* Quick Links */}
@@ -69,6 +66,35 @@ export default function Footer() {
                                 › Contact
                             </Link>
                         </li>
+                    </ul>
+                </div>
+
+
+
+                <div>
+                    <h3 className="font-semibold text-lg mb-3">Quick Links</h3>
+                    <ul className="space-y-2 text-sm text-gray-700">
+                        <li>
+                            <Link href="/terms" >
+                                › Terms &amp; Conditions
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/privacy" >
+                                › Privacy Policy
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/disclaimer" >
+                                › Disclaimer
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/refund" >
+                                › Refund Policy
+                            </Link>
+                        </li>
+                       
                     </ul>
                 </div>
 
@@ -142,7 +168,7 @@ export default function Footer() {
                 <div className="max-w-7xl mx-auto px-6 py-3 flex flex-col md:flex-row items-center md:justify-between">
 
                     {/* Left Section - Links */}
-                    <div className="flex space-x-2">
+                    {/* <div className="flex space-x-2">
                         <Link href="/terms" className="text-white ">Terms &amp; Conditions</Link>
                         <span>|</span>
                         <Link href="/privacy" className="text-white ">Privacy Policy</Link>
@@ -151,6 +177,21 @@ export default function Footer() {
                         <span>|</span>
                         <Link href="/refund" className="text-white ">Refund</Link>
                         
+                    </div> */}
+
+                    <div className="flex space-x-4 text-white">
+                        <Link href="https://www.facebook.com/myimpulsivewings/" target="_blank">
+                            <FaFacebookF />
+                        </Link>
+                        <Link href="#" target="_blank">
+                            <FaLinkedinIn />
+                        </Link>
+                        <Link href="#" target="_blank">
+                            <FaWhatsapp />
+                        </Link>
+                        <Link href="#" target="_blank">
+                            <FaInstagram />
+                        </Link>
                     </div>
 
                     {/* Middle Section - Copyright */}

@@ -30,7 +30,7 @@ export default function BaliPackagePage() {
         'Tour Inclusion',
         'Tour Exclusion',
         'Booking Policy',
-        'Cancellation Policy'
+       
     ];
 
     const renderTabContent = () => {
@@ -39,7 +39,7 @@ export default function BaliPackagePage() {
             'Tour Inclusion': data.tour_inclusion,
             'Tour Exclusion': data.tour_exclusion,
             'Booking Policy': data.terms_conditions,
-            'Cancellation Policy': data.cancellation_policy
+            
         };
         return (
             <div

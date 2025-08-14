@@ -56,7 +56,7 @@ export default function Home() {
         </div>
 
         {/* Info Section */}
-        <section className="grid  grid-cols-1 md:grid-cols-2 gap-8 px-10 py-12 items-start">
+        <section className="grid  grid-cols-1 md:grid-cols-2 gap-8 px-10 py-10 items-start">
           <div className="w-full relative max-w-[900px] h-[500px] rounded-2xl overflow-hidden">
             {/* <video
             controls
@@ -84,7 +84,7 @@ export default function Home() {
           <div>
             <h4 className="text-3xl text-cyan-600 font-medium ">Let&apos; Go Together</h4>
             <h2 className="text-3xl font-bold mb-2 leading-tight">Plan Your Trip With us</h2>
-            <p className="text-[15px] text-gray-600 mb-3">At ImpulsiveWings, we make holiday planning effortless and exciting. From the moment you dream of a getaway to the day you return, we handle every detail:</p>
+            <p className="text-xl text-gray-600 mb-3">At ImpulsiveWings, we make holiday planning effortless and exciting. From the moment you dream of a getaway to the day you return, we handle every detail:</p>
 
             <div className="space-y-2">
               <div className="flex items-start space-x-4">
@@ -95,7 +95,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-semibold">Discover</h3>
-                  <p className="text-[10px] text-gray-600">Get inspired with personalized destination ideas.</p>
+                  <p className="text-base text-gray-600">Get inspired with personalized destination ideas.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">

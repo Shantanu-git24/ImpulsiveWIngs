@@ -50,7 +50,7 @@ const ExploreByLocation = () => {
 
 
   return (
-    <section className="py-16 bg-white text-center relative">
+    <section className="pb-10 bg-white text-center relative">
       <h2 className="text-3xl font-semibold text-gray-800 mb-6" style={{ fontFamily: 'Manrope, cursive', fontSize: '42px' }}>
         Explore By Location
       </h2>
@@ -78,25 +78,38 @@ const ExploreByLocation = () => {
         {/* Custom Navigation Buttons */}
         <div
           ref={prevRef}
-          className="custom-swiper-button absolute top-1/2 z-10 flex 
-             left-[-20px] md:left-[-20px] lg:left-0"
+          className="custom-swiper-button left-[-20px] absolute top-1/2 z-10 hidden md:flex"
         >
           <span
-            className="bg-[#1CA8CB]"
-            style={{ cursor: 'pointer', width: '25px', borderRadius: '20px', color: 'white' }}
+            className="bg-[#0094da]"
+            style={{
+              cursor: 'pointer',
+              width: '30px',
+              height: '30px',
+              borderRadius: '50%',
+              color: 'white',
+              textAlign: 'center',
+              lineHeight: '30px',
+            }}
           >
             &lt;
           </span>
         </div>
-
         <div
           ref={nextRef}
-          className="custom-swiper-button absolute top-1/2 z-10 flex 
-             right-[-20px] md:right-[-20px] lg:right-0"
+          className="custom-swiper-button right-[-20px] absolute top-1/2 z-10 hidden md:flex"
         >
           <span
-            className="bg-[#1CA8CB]"
-            style={{ cursor: 'pointer', width: '25px', borderRadius: '20px', color: 'white' }}
+            className="bg-[#0094da]"
+            style={{
+              cursor: 'pointer',
+              width: '30px',
+              height: '30px',
+              borderRadius: '50%',
+              color: 'white',
+              textAlign: 'center',
+              lineHeight: '30px',
+            }}
           >
             &gt;
           </span>
