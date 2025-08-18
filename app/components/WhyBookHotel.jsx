@@ -25,7 +25,7 @@ export default function WhyBookHotel({ type = 'Flight', image = '/images/image (
     ];
     return (
         <section className="px-6  lg:px-16 pt-10 bg-white">
-            <h2 className="text-3xl font-bold text-center mb-8">Why Book {type} With Us</h2>
+            <h2 className="text-3xl font-semibold text-center mb-8" style={{  fontSize: '42px' }}>Why Book {type} With Us</h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                 <div className="flex justify-center lg:justify-end w-full">
                     <Image

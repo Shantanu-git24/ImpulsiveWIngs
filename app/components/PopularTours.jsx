@@ -40,10 +40,12 @@ export default function PopularTours() {
   }
 
   return (
-    <section className="bg-[#f0f8ff] py-10 px-4">
+    <section className=" py-10 px-4" style={{
+        backgroundImage: "url('/images/Section.png')", // Replace this path
+      }}>
       <div className="max-w-7xl mx-auto text-center mb-8">
         <h4
-          className="text-cyan-700 text-lg mb-2"
+          className="text-cyan-700  mb-2"
           style={{ fontFamily: 'Montez, cursive', fontSize: '40px' }}
         >
           Best Place For You
@@ -61,43 +63,11 @@ export default function PopularTours() {
 
       <div className="max-w-7xl mx-auto relative px-4">
         {/* Custom Navigation Buttons */}
-        <div
-          ref={prevRef}
-          className="custom-swiper-button left-[-20px] absolute top-1/2 z-10 hidden md:flex"
-        >
-          <span
-            className="bg-[#0094da]"
-            style={{
-              cursor: 'pointer',
-              width: '30px',
-              height: '30px',
-              borderRadius: '50%',
-              color: 'white',
-              textAlign: 'center',
-              lineHeight: '30px',
-            }}
-          >
-            &lt;
-          </span>
+        <div ref={prevRef} className="custom-swiper-button prev-btn">
+          <span>&lt;</span>
         </div>
-        <div
-          ref={nextRef}
-          className="custom-swiper-button right-[-20px] absolute top-1/2 z-10 hidden md:flex"
-        >
-          <span
-            className="bg-[#0094da]"
-            style={{
-              cursor: 'pointer',
-              width: '30px',
-              height: '30px',
-              borderRadius: '50%',
-              color: 'white',
-              textAlign: 'center',
-              lineHeight: '30px',
-            }}
-          >
-            &gt;
-          </span>
+        <div ref={nextRef} className="custom-swiper-button next-btn">
+          <span>&gt;</span>
         </div>
 
         <Swiper
@@ -119,9 +89,9 @@ export default function PopularTours() {
           className="max-w-7xl mx-auto"
         >
           {tours.map((tour, id) => (
-            <SwiperSlide key={tour.id}>
-              <Link href={`/details/${tour.id}`} passHref>
-                <div className="bg-white rounded-xl shadow-md overflow-hidden relative h-[380px] flex flex-col justify-between">
+            <SwiperSlide key={tour.package.id}>
+              <Link href={`/details/${tour.package.id}`} passHref>
+                <div className="bg-white rounded-xl shadow-md overflow-hidden relative h-[380px] flex flex-col justify-between cursor-pointer">
                   {/* Image */}
                   <div className="relative h-48 w-full">
                     <Image
@@ -134,7 +104,6 @@ export default function PopularTours() {
 
                   {/* Content */}
                   <div className="p-4 flex flex-col justify-between flex-grow space-y-2">
-
                     {/* Title */}
                     <h3
                       className="text-lg font-semibold h-[35px] overflow-hidden text-ellipsis line-clamp-2"
@@ -159,14 +128,9 @@ export default function PopularTours() {
                     </p>
 
                     {/* Buttons */}
-                    <div className="flex justify-center items-center  pt-2">
-                      {/* <button
-                        className="bg-white text-[#0094da] border border-[#0094da] cursor-pointer text-[10px] font-medium py-2 px-4 rounded-full hover:text-white hover:bg-[#0094da] transition"
-                      >
-                        View PDF
-                      </button> */}
+                    <div className="flex justify-center items-center pt-2">
                       <button
-                        onClick={() => router.push(`/details/${tour.id}`)}
+                        onClick={() => router.push(`/details/${tour.package.id}`)}
                         className="bg-[#0094da] text-white text-sm font-medium py-2 px-4 rounded-full transition cursor-pointer"
                       >
                         View Itinerary
@@ -177,9 +141,52 @@ export default function PopularTours() {
               </Link>
             </SwiperSlide>
 
+
           ))}
         </Swiper>
       </div>
+      <style jsx>{`
+        .custom-swiper-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 34px;
+          height: 34px;
+          background-color: #0094da;
+          color: #fff;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        .prev-btn {
+          left: -25px;
+        }
+        .next-btn {
+          right: -25px;
+        }
+        /* Adjust at 1024px specifically */
+        @media (max-width: 1100px) {
+          .prev-btn {
+            left: 5px;
+          }
+          .next-btn {
+            right: 5px;
+          }
+        }
+        /* Hide on small screens if needed */
+        @media (max-width: 767px) {
+          .custom-swiper-button {
+            display: none;
+          }
+        }
+        .custom-swiper-button span {
+          font-size: 16px;
+          line-height: 1;
+        }
+      `}</style>
     </section>
   );
 }

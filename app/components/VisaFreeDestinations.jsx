@@ -98,44 +98,55 @@ export default function VisaFreeDestinations() {
         </Swiper>
 
         {/* Custom Navigation Buttons */}
-        <div
-          ref={prevRef}
-          className="custom-swiper-button absolute  items-center left-[-20px] top-1/2 transform -translate-y-1/2  z-10 hidden md:flex"
-        >
-          <span
-            className="bg-[#1CA8CB] flex items-center justify-center"
-            style={{
-              cursor: 'pointer',
-              width: '30px',
-              height: '30px',
-              borderRadius: '50%',
-              color: 'white',
-              fontSize: '20px',
-            }}
-          >
-            &lt;
-          </span>
+        <div ref={prevRef} className="custom-swiper-button prev-btn">
+          <span>&lt;</span>
         </div>
-
-        <div
-          ref={nextRef}
-          className="custom-swiper-button absolute items-center right-[-20px] top-1/2 transform -translate-y-1/2 z-10 hidden md:flex"
-        >
-          <span
-            className="bg-[#1CA8CB] flex items-center justify-center"
-            style={{
-              cursor: 'pointer',
-              width: '30px',
-              height: '30px',
-              borderRadius: '50%',
-              color: 'white',
-              fontSize: '20px',
-            }}
-          >
-            &gt;
-          </span>
+        <div ref={nextRef} className="custom-swiper-button next-btn">
+          <span>&gt;</span>
         </div>
       </div>
+      <style jsx>{`
+        .custom-swiper-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 34px;
+          height: 34px;
+          background-color: #0094da;
+          color: #fff;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        .prev-btn {
+          left: -25px;
+        }
+        .next-btn {
+          right: -25px;
+        }
+        /* Adjust at 1024px specifically */
+        @media (max-width: 1100px) {
+          .prev-btn {
+            left: 5px;
+          }
+          .next-btn {
+            right: 5px;
+          }
+        }
+        /* Hide on small screens if needed */
+        @media (max-width: 767px) {
+          .custom-swiper-button {
+            display: none;
+          }
+        }
+        .custom-swiper-button span {
+          font-size: 16px;
+          line-height: 1;
+        }
+      `}</style>
     </section>
   );
 }

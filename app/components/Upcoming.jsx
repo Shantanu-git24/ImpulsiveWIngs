@@ -27,7 +27,7 @@ export default function UpcomingSlider() {
       }}>
       <div className="max-w-7xl mx-auto px-4 text-center mb-10">
         <h3 className="text-lg text-gray-500" style={{ fontFamily: 'Montez, cursive', fontSize: '40px' }}>Upcoming Event</h3>
-        <h2 className="text-4xl font-bold text-cyan-900">Virtual Holiday</h2>
+        <h2 className=" font-bold text-cyan-900" style={{ fontFamily: 'Manrope, cursive', fontSize: '42px' }}>Virtual Holiday</h2>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 relative">
@@ -45,6 +45,11 @@ export default function UpcomingSlider() {
             swiper.navigation.update();
           }}
           modules={[Navigation]}
+          breakpoints={{
+            320: { slidesPerView: 1 },   // 📱 mobile
+            640: { slidesPerView: 2 },   // tablets
+            1024: { slidesPerView: 3 },  // desktops
+          }}
         >
           {blogs.map((item, idx) => (
             <SwiperSlide key={idx}>
@@ -71,15 +76,55 @@ export default function UpcomingSlider() {
         </Swiper>
 
         {/* Navigation */}
-        {/* <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-          <button
-            ref={nextRef}
-            className="w-10 h-10 rounded-full bg-cyan-600 text-white shadow hover:bg-cyan-700"
-          >
-            ➤
-          </button>
-        </div> */}
+       <div ref={prevRef} className="custom-swiper-button prev-btn">
+          <span>&lt;</span>
+        </div>
+        <div ref={nextRef} className="custom-swiper-button next-btn">
+          <span>&gt;</span>
+        </div>
       </div>
+      <style jsx>{`
+        .custom-swiper-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 34px;
+          height: 34px;
+          background-color: #0094da;
+          color: #fff;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        .prev-btn {
+          left: -25px;
+        }
+        .next-btn {
+          right: -25px;
+        }
+        /* Adjust at 1024px specifically */
+        @media (max-width: 1100px) {
+          .prev-btn {
+            left: 5px;
+          }
+          .next-btn {
+            right: 5px;
+          }
+        }
+        /* Hide on small screens if needed */
+        @media (max-width: 767px) {
+          .custom-swiper-button {
+            display: none;
+          }
+        }
+        .custom-swiper-button span {
+          font-size: 16px;
+          line-height: 1;
+        }
+      `}</style>
     </section>
   );
 }

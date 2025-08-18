@@ -27,7 +27,7 @@ export default function HotelsPage() {
           priority
         />
       </div>
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
     </main>
   );

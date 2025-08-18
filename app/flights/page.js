@@ -26,7 +26,7 @@ export default function FlightsPage() {
           priority
         />
       </div>
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
       <Footer />
     </main>
   );

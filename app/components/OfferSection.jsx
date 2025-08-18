@@ -25,7 +25,7 @@ export default function WhyBook({ type = 'Flight', image = '/images/image (1).pn
 ];
   return (
     <section className="px-8 pt-10 bg-white">
-      <h2 className="text-3xl font-bold text-center ">Why Choose ImpulsiveWings for Your Corporate Needs?</h2>
+      <h2 className="text-3xl font-semibold text-center sm:text-2xl " style={{  fontSize: '42px' }}>Why Choose ImpulsiveWings for Your Corporate Needs?</h2>
 
       <section className="py-8 px-6 max-w-7xl mx-auto">
                 

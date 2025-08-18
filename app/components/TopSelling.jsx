@@ -78,7 +78,7 @@ const TopSellingTours = () => {
 
     return (
         <section className="py-10 text-center">
-            <h4 className="text-cyan-700 text-lg font-semibold" style={{ fontFamily: 'Montez, cursive', fontSize: '40px' }}>Explore</h4>
+            <h4 className="text-cyan-700 text-lg " style={{ fontFamily: 'Montez, cursive', fontSize: '40px' }}>Explore</h4>
             <h2 className="text-3xl font-bold text-gray-800 mb-4" style={{ fontFamily: 'Manrope, cursive', fontSize: '42px' }}>Group Tours from India</h2>
 
             {/* Filter Buttons */}
@@ -102,11 +102,11 @@ const TopSellingTours = () => {
             {/* Slider Container */}
             <div className="max-w-7xl mx-auto px-4 relative">
                 {/* Custom Nav Buttons */}
-                <div ref={prevRef} className="custom-nav-button  left-[-20px] absolute top-1/2 z-10 hidden md:flex"  >
-                    <span className='bg-[#1CA8CB]  ' style={{ cursor: "pointer", width: "25px", borderRadius: "20px", color: "white" }}>&lt;</span>
+                <div ref={prevRef} className="custom-swiper-button prev-btn">
+                    <span>&lt;</span>
                 </div>
-                <div ref={nextRef} className="custom-nav-button right-[-20px] absolute top-1/2 z-10 hidden md:flex">
-                    <span className='bg-[#1CA8CB]  ' style={{ cursor: "pointer", width: "25px", borderRadius: "20px", color: "white" }}>&gt;</span>
+                <div ref={nextRef} className="custom-swiper-button next-btn">
+                    <span>&gt;</span>
                 </div>
                 <Swiper
                     key={activeTab}
@@ -132,7 +132,7 @@ const TopSellingTours = () => {
                 >
                     {tours.map((tour, id) => (
                         <SwiperSlide key={id}>
-                            <Link href={`/details/${tour.id}`} passHref>
+                            <Link href={`/details/${tour.package.id}`} passHref>
                                 <div className="rounded-xl overflow-hidden shadow-lg bg-white w-[300px] mx-auto h-[420px] flex flex-col justify-between">
                                     <div>
                                         <Image
@@ -165,7 +165,7 @@ const TopSellingTours = () => {
 
                                     <div>
                                         <button
-                                            onClick={() => router.push(`/details/${tour.id}`)}
+                                            onClick={() => router.push(`/details/${tour.package.id}`)}
                                             className="bg-blue-500 w-full text-white py-2 font-medium cursor-pointer"
                                         >
                                             View Itinerary →
@@ -193,6 +193,49 @@ const TopSellingTours = () => {
           <i className="bi bi-chevron-right text-2xl"></i>
         </div> */}
             </div>
+
+            <style jsx>{`
+        .custom-swiper-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 34px;
+          height: 34px;
+          background-color: #0094da;
+          color: #fff;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        .prev-btn {
+          left: -25px;
+        }
+        .next-btn {
+          right: -25px;
+        }
+        /* Adjust at 1024px specifically */
+        @media (max-width: 1100px) {
+          .prev-btn {
+            left: 5px;
+          }
+          .next-btn {
+            right: 5px;
+          }
+        }
+        /* Hide on small screens if needed */
+        @media (max-width: 767px) {
+          .custom-swiper-button {
+            display: none;
+          }
+        }
+        .custom-swiper-button span {
+          font-size: 16px;
+          line-height: 1;
+        }
+      `}</style>
         </section>
     );
 };

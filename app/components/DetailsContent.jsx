@@ -30,7 +30,7 @@ export default function BaliPackagePage() {
         'Tour Inclusion',
         'Tour Exclusion',
         'Booking Policy',
-       
+
     ];
 
     const renderTabContent = () => {
@@ -39,7 +39,7 @@ export default function BaliPackagePage() {
             'Tour Inclusion': data.tour_inclusion,
             'Tour Exclusion': data.tour_exclusion,
             'Booking Policy': data.terms_conditions,
-            
+
         };
         return (
             <div
@@ -64,21 +64,22 @@ export default function BaliPackagePage() {
                 )}
             </div>
 
-            <div className="flex space-x-4 my-6">
-                {tabs.map((tab) => (
-                    <button
-                        key={tab}
-                        className={`py-3 px-4 text-sm font-medium relative ${activeTab === tab
-                            ? 'text-white rounded-[10px] bg-[#0094da] font-semibold'
-                            : 'text-gray-600'
-                            }`}
-                        onClick={() => setActiveTab(tab)}
-                    >
-                        {tab}
-                    </button>
-                ))}
+            <div className="w-full overflow-x-auto">
+                <div className="flex space-x-4 my-6 whitespace-nowrap">
+                    {tabs.map((tab) => (
+                        <button
+                            key={tab}
+                            className={`py-3 px-4 text-sm font-medium relative ${activeTab === tab
+                                    ? "text-white rounded-[10px] bg-[#0094da] font-semibold"
+                                    : "text-gray-600"
+                                }`}
+                            onClick={() => setActiveTab(tab)}
+                        >
+                            {tab}
+                        </button>
+                    ))}
+                </div>
             </div>
-
             {renderTabContent()}
         </div>
     );

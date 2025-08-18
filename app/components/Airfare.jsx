@@ -112,7 +112,7 @@ const FlightTabs = () => {
     slidesToScroll: 1,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 768, settings: { slidesToShow: 1 } },
+      { breakpoint: 768, settings: { slidesToShow: 2 } },
     ],
   };
 
@@ -138,7 +138,7 @@ const FlightTabs = () => {
         {/* Left Arrow */}
           <button
           onClick={() => sliderRef.current?.slickPrev()}
-          className="absolute -left-12 z-10 bg-white border rounded-full p-2 shadow-md hover:bg-[#0094da] hover:text-white transition"
+          className="absolute -left-2 z-10  border rounded-full p-2 shadow-md bg-[#0094da]  text-white transition"
         >
           <svg
             className="w-5 h-5"
@@ -190,7 +190,7 @@ const FlightTabs = () => {
         {/* Right Arrow */}
         <button
            onClick={() => sliderRef.current?.slickNext()}
-          className="absolute -right-12 z-10 bg-white border rounded-full p-2 shadow-md hover:bg-[#0094da] hover:text-white transition"
+          className="absolute -right-2 z-10   rounded-full p-2 shadow-md bg-[#0094da] text-white transition"
         >
           <svg
             className="w-5 h-5"

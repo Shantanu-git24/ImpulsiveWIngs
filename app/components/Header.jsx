@@ -73,13 +73,13 @@ export default function Header() {
     {/* Buttons */}
     <div className="flex space-x-2">
       <button
-        className="bg-sky-400 hover:bg-sky-400 text-white px-4 py-1 rounded-full font-semibold text-sm cursor-pointer"
+        className="bg-sky-400 hover:bg-sky-400 text-white  px-4 py-1 rounded-full font-semibold text-xs sm:text-base cursor-pointer"
         onClick={() => setShowPopup(true)}
       >
         Create a Trip
       </button>
       <Link href="https://wealthywings.in/pricing" target="_blank">
-        <button className="bg-sky-400 hover:bg-sky-500 text-white px-4 py-1 font-semibold rounded-full text-sm cursor-pointer">
+        <button className="bg-sky-400 hover:bg-sky-500 text-white px-4 py-1 font-semibold rounded-full text-xs sm:text-base cursor-pointer">
           Join Club
         </button>
       </Link>
@@ -88,7 +88,7 @@ export default function Header() {
 
   {/* Mobile Toggle Button */}
   <button
-    className="md:hidden text-black"
+    className="md:hidden text-white"
     onClick={() => setIsOpen(!isOpen)}
   >
     {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -98,7 +98,11 @@ export default function Header() {
 
             {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-transparent bg-opacity-90 text-white px-6 py-4 space-y-4">
+        <div className="absolute top-0 left-0 w-full h-[400px] bg-white flex flex-col items-center text-black justify-center space-y-6 shadow-lg md:hidden">
+
+          <button onClick={() => setIsOpen(false)} className="absolute top-4 right-4">
+            ✕
+          </button>
           <Link href="/packages" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
             <Globe className="w-5 h-5" /> Packages
           </Link>

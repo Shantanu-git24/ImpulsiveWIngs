@@ -61,10 +61,10 @@ export default function HeroCorporate() {
             </button>
           </div>
         </div> */}
-        <div className="w-full md:w-[420px] h-[450px] ml-auto backdrop-blur-md bg-white/60 rounded-3xl p-6 shadow-xl">
+        {/* <div className="w-full md:w-[420px] h-[450px] ml-auto backdrop-blur-md bg-white/60 rounded-3xl p-6 shadow-xl">
           <h2 className="text-xl font-bold ">Schedule a callback now!</h2>
           <p className="text-sm text-gray-600 font-medium ">Your Details*</p>
-          {/* From / To */}
+          {/* From / To 
           <div className="space-y-3 mb-2">
             <input type="text" placeholder="Enter Full Name" className="w-full border text-sm bg-white border-[#0094DA] rounded px-3 py-2" />
           </div>
@@ -73,7 +73,7 @@ export default function HeroCorporate() {
             />
           </div>
 
-          {/* Class & Phone */}
+          {/* Class & Phone 
           <div className="flex gap-2 mb-2 ">
             <div>
               <input type="text" placeholder="Phone Number" className="w-full border text-sm bg-white border-[#0094DA] rounded px-3 py-2" />
@@ -113,7 +113,7 @@ export default function HeroCorporate() {
               Submit
             </button>
           </div>
-        </div>
+        </div> */}
       </div>
     </section >
   );

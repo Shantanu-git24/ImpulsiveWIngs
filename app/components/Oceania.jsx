@@ -50,24 +50,24 @@ export default function OceaniaSlider() {
     setFilteredTours(filtered);
   }, [activeTab, allTours]);
 
-//   useEffect(() => {
-//   fetch('https://application.impulsivewings.in/api/wildlife-tours')
-//     .then((res) => res.json())
-//     .then((data) => {
-//       if (Array.isArray(data.data)) {
-//         console.log('📦 All fetched tours:', data.data);
-//         const india = data.data.filter(t => t.destination_type === 'India');
-//         const intl = data.data.filter(t => t.destination_type === 'International');
-//         console.log('🇮🇳 India tours count:', india.length);
-//         console.log('🌍 International tours count:', intl.length);
-//         setAllTours(data.data);
-//       } else {
-//         console.error('Expected array but got:', data);
-//         setAllTours([]);
-//       }
-//     })
-//     .catch((err) => console.error('API fetch failed:', err));
-// }, []);
+  //   useEffect(() => {
+  //   fetch('https://application.impulsivewings.in/api/wildlife-tours')
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (Array.isArray(data.data)) {
+  //         console.log('📦 All fetched tours:', data.data);
+  //         const india = data.data.filter(t => t.destination_type === 'India');
+  //         const intl = data.data.filter(t => t.destination_type === 'International');
+  //         console.log('🇮🇳 India tours count:', india.length);
+  //         console.log('🌍 International tours count:', intl.length);
+  //         setAllTours(data.data);
+  //       } else {
+  //         console.error('Expected array but got:', data);
+  //         setAllTours([]);
+  //       }
+  //     })
+  //     .catch((err) => console.error('API fetch failed:', err));
+  // }, []);
 
 
 
@@ -79,7 +79,7 @@ export default function OceaniaSlider() {
     <section className="py-4">
       <div className="max-w-7xl mx-auto px-4 text-center mb-8">
         {/* <h3 className="text-2xl  text-cyan-700" style={{ fontFamily: 'Montez, cursive',fontSize:'40px' }}>Lorem Ipsum</h3> */}
-        <h2 className="text-4xl font-bold" style={{ fontFamily: 'Manrope, cursive', fontSize: '40px' }}>Wildlife Tours</h2>
+        <h2 className="text-4xl font-bold" style={{ fontFamily: 'Manrope, cursive', fontSize: '42px' }}>Wildlife Tours</h2>
       </div>
 
       <div className="mb-6 flex justify-center gap-4">
@@ -103,46 +103,14 @@ export default function OceaniaSlider() {
         {/* Navigation Arrow */}
         {/* Custom Navigation Buttons */}
         {/* Custom Navigation Buttons */}
-       <div
-          ref={prevRef}
-          className="custom-swiper-button left-[-20px] absolute top-1/2 z-10 hidden md:flex"
-        >
-          <span
-            className="bg-[#0094da]"
-            style={{
-              cursor: 'pointer',
-              width: '30px',
-              height: '30px',
-              borderRadius: '50%',
-              color: 'white',
-              textAlign: 'center',
-              lineHeight: '30px',
-            }}
-          >
-            &lt;
-          </span>
+        <div ref={prevRef} className="custom-swiper-button prev-btn">
+          <span>&lt;</span>
         </div>
-        <div
-          ref={nextRef}
-          className="custom-swiper-button right-[-20px] absolute top-1/2 z-10 hidden md:flex"
-        >
-          <span
-            className="bg-[#0094da]"
-            style={{
-              cursor: 'pointer',
-              width: '30px',
-              height: '30px',
-              borderRadius: '50%',
-              color: 'white',
-              textAlign: 'center',
-              lineHeight: '30px',
-            }}
-          >
-            &gt;
-          </span>
+        <div ref={nextRef} className="custom-swiper-button next-btn">
+          <span>&gt;</span>
         </div>
         <Swiper
-        key={activeTab}
+          key={activeTab}
           slidesPerView={5}
           spaceBetween={15}
           loop={true}
@@ -204,6 +172,48 @@ export default function OceaniaSlider() {
 
 
       </div>
+      <style jsx>{`
+        .custom-swiper-button {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 34px;
+          height: 34px;
+          background-color: #0094da;
+          color: #fff;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+        .prev-btn {
+          left: -25px;
+        }
+        .next-btn {
+          right: -25px;
+        }
+        /* Adjust at 1024px specifically */
+        @media (max-width: 1100px) {
+          .prev-btn {
+            left: 5px;
+          }
+          .next-btn {
+            right: 5px;
+          }
+        }
+        /* Hide on small screens if needed */
+        @media (max-width: 767px) {
+          .custom-swiper-button {
+            display: none;
+          }
+        }
+        .custom-swiper-button span {
+          font-size: 16px;
+          line-height: 1;
+        }
+      `}</style>
     </section>
   );
 }
