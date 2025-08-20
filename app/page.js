@@ -21,21 +21,40 @@ import { useState, useEffect } from 'react';
 export default function Home() {
   const [bgImageUrl, setBgImageUrl] = useState('');
 
-  useEffect(() => {
-    fetch('https://application.impulsivewings.in/api/banners')
-      .then((res) => res.json())
-      .then((response) => {
+    useEffect(() => {
+    const fetchBanner = async () => {
+      try {
+        const res = await fetch("https://application.impulsivewings.in/api/banners");
+        const response = await res.json();
+
         if (response.success && Array.isArray(response.data) && response.data.length > 0) {
-          const bannerImage = response.data[0].image;
-          const fullImageUrl = `https://application.impulsivewings.in/${bannerImage}`;
-          setBgImageUrl(fullImageUrl);
-        } else {
-          console.error('No valid banner image found in API response.');
+          const banner = response.data[0];
+
+          const isMobile = window.innerWidth <= 768;
+          const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024;
+
+          let imagePath = banner.image; // default desktop image
+
+          if (isMobile && banner.mobile_image) {
+            imagePath = banner.mobile_image;
+          } else if (isTablet && banner.tab_image) {
+            imagePath = banner.tab_image;
+          }
+
+          if (imagePath) {
+            setBgImageUrl(`https://application.impulsivewings.in/${imagePath}`);
+          }
         }
-      })
-      .catch((error) => {
-        console.error('Error fetching banner:', error);
-      });
+      } catch (error) {
+        console.error("Error fetching banner:", error);
+      }
+    };
+
+    fetchBanner();
+        const handleResize = () => fetchBanner();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
 
@@ -48,7 +67,7 @@ export default function Home() {
 
           <div
       className="relative bg-center bg-cover h-[650px] flex items-center justify-center px-4 bg-no-repeat
-              sm:bg-cover w-full"
+              sm:bg-cover w-full "
       style={{
         backgroundImage: bgImageUrl ? `url(${bgImageUrl})` : 'none',
       }}
@@ -142,6 +161,9 @@ export default function Home() {
                   <p className="text-base text-gray-600">Enjoy 24/7 support while you explore the world.</p>
                 </div>
               </div>
+              {/* <div>
+                <button className='bg-[#0094da] text-white p-2 border-r-emerald-50'>Know More</button>
+              </div> */}
             </div>
           </div>
         </section>

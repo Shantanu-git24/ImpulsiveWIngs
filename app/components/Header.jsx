@@ -43,8 +43,8 @@ export default function Header() {
 
 
   return (
-    <header className="absolute top-0 left-0 w-full z-50 bg-transparent text-white">
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+    <header className="relative top-0 left-0 w-full z-50 bg-transparent text-black">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between mb-2">
   {/* Logo */}
   <div className="flex items-center space-x-2">
     <Link href="/" >
@@ -56,16 +56,16 @@ export default function Header() {
   <div className="flex items-center space-x-6">
     {/* Navigation */}
     <nav className="hidden md:flex space-x-6 text-sm text-gray-700 items-center">
-      <Link href="/packages" className="flex items-center text-white gap-1 hover:text-white cursor-pointer">
+      <Link href="/packages" className="flex items-center text-[#0094da] gap-1 hover:text-white cursor-pointer">
         <Globe className="w-5 h-5" /> <span className="text-[16px]">Packages</span>
       </Link>
-      <Link href="/flights" className="flex items-center text-white gap-1 hover:text-white cursor-pointer">
+      <Link href="/flights" className="flex items-center text-[#0094da] gap-1 hover:text-white cursor-pointer">
         <Plane className="w-4 h-4" /> <span className="text-[16px]">Flights</span>
       </Link>
-      <Link href="/hotels" className="flex items-center text-white gap-1 hover:text-white cursor-pointer">
+      <Link href="/hotels" className="flex items-center text-[#0094da] gap-1 hover:text-white cursor-pointer">
         <Hotel className="w-4 h-4" /> <span className="text-[16px]">Hotels</span>
       </Link>
-      <Link href="/corporate" className="flex items-center text-white gap-1 hover:text-white cursor-pointer">
+      <Link href="/corporate" className="flex items-center text-[#0094da] gap-1 hover:text-white cursor-pointer">
         <Briefcase className="w-4 h-4" /> <span className="text-[16px]">Corporate Package</span>
       </Link>
     </nav>
@@ -88,7 +88,7 @@ export default function Header() {
 
   {/* Mobile Toggle Button */}
   <button
-    className="md:hidden text-white"
+    className="md:hidden text-[#0094da]"
     onClick={() => setIsOpen(!isOpen)}
   >
     {isOpen ? <X size={28} /> : <Menu size={28} />}
