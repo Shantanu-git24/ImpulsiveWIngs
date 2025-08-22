@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from 'react';
 import Link from "next/link";
 import { Globe, Plane, Hotel, Briefcase } from "lucide-react";
-import { Menu , X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
 
@@ -45,58 +45,90 @@ export default function Header() {
   return (
     <header className="relative top-0 left-0 w-full z-50 bg-transparent text-black">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between mb-2">
-  {/* Logo */}
-  <div className="flex items-center space-x-2">
-    <Link href="/" >
-      <Image src="/images/LOGO.png" alt="Logo" width={120} height={60} />
-    </Link>
-  </div>
+        {/* Logo */}
+        <div className="flex items-center space-x-2">
+          <Link href="/" >
+            <Image src="/images/LOGO.png" alt="Logo" width={120} height={60} />
+          </Link>
+        </div>
 
-  {/* Nav + Buttons */}
-  <div className="flex items-center space-x-6">
-    {/* Navigation */}
-    <nav className="hidden md:flex space-x-6 text-sm text-gray-700 items-center">
-      <Link href="/packages" className="flex items-center text-[#0094da] gap-1 hover:text-white cursor-pointer">
-        <Globe className="w-5 h-5" /> <span className="text-[16px]">Packages</span>
-      </Link>
-      <Link href="/flights" className="flex items-center text-[#0094da] gap-1 hover:text-white cursor-pointer">
-        <Plane className="w-4 h-4" /> <span className="text-[16px]">Flights</span>
-      </Link>
-      <Link href="/hotels" className="flex items-center text-[#0094da] gap-1 hover:text-white cursor-pointer">
-        <Hotel className="w-4 h-4" /> <span className="text-[16px]">Hotels</span>
-      </Link>
-      <Link href="/corporate" className="flex items-center text-[#0094da] gap-1 hover:text-white cursor-pointer">
-        <Briefcase className="w-4 h-4" /> <span className="text-[16px]">Corporate Package</span>
-      </Link>
-    </nav>
+        {/* Nav + Buttons */}
+        <div className="flex items-center space-x-6">
+          {/* Navigation */}
+          <nav className="hidden md:flex space-x-6 text-sm text-gray-700 items-center">
+            <Link
+              href="/packages"
+              className="flex items-center gap-1 cursor-pointer text-[#0094da] relative group"
+            >
+              <Globe className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
+              <span className="text-[16px] transition-colors duration-300 group-hover:text-[#0094da]">
+                Packages
+              </span>
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#0094da] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
 
-    {/* Buttons */}
-    <div className="flex space-x-2">
-      <button
-        className="bg-sky-400 hover:bg-sky-400 text-white  px-4 py-1 rounded-full font-semibold text-xs sm:text-base cursor-pointer"
-        onClick={() => setShowPopup(true)}
-      >
-        Create a Trip
-      </button>
-      <Link href="https://wealthywings.in/pricing" target="_blank">
-        <button className="bg-sky-400 hover:bg-sky-500 text-white px-4 py-1 font-semibold rounded-full text-xs sm:text-base cursor-pointer">
-          Join Club
+            <Link
+              href="/flights"
+              className="flex items-center gap-1 cursor-pointer text-[#0094da] relative group"
+            >
+              <Plane className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
+              <span className="text-[16px] transition-colors duration-300 group-hover:text-[#0094da]">
+                Flights
+              </span>
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#0094da] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+
+            <Link
+              href="/hotels"
+              className="flex items-center gap-1 cursor-pointer text-[#0094da] relative group"
+            >
+              <Hotel className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
+              <span className="text-[16px] transition-colors duration-300 group-hover:text-[#0094da]">
+                Hotels
+              </span>
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#0094da] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+
+            <Link
+              href="/corporate"
+              className="flex items-center gap-1 cursor-pointer text-[#0094da] relative group"
+            >
+              <Briefcase className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
+              <span className="text-[16px] transition-colors duration-300 group-hover:text-[#0094da]">
+                Corporate Package
+              </span>
+              <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#0094da] transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          </nav>
+
+
+          {/* Buttons */}
+          <div className="flex space-x-2">
+            <button
+              className="bg-sky-400 hover:bg-sky-400 text-white  px-4 py-1 rounded-full font-semibold text-xs sm:text-base cursor-pointer"
+              onClick={() => setShowPopup(true)}
+            >
+              Create a Trip
+            </button>
+            <Link href="https://wealthywings.in/pricing" target="_blank">
+              <button className="bg-sky-400 hover:bg-sky-500 text-white px-4 py-1 font-semibold rounded-full text-xs sm:text-base cursor-pointer">
+                Join Club
+              </button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile Toggle Button */}
+        <button
+          className="md:hidden text-[#0094da]"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
-      </Link>
-    </div>
-  </div>
-
-  {/* Mobile Toggle Button */}
-  <button
-    className="md:hidden text-[#0094da]"
-    onClick={() => setIsOpen(!isOpen)}
-  >
-    {isOpen ? <X size={28} /> : <Menu size={28} />}
-  </button>
-</div>
+      </div>
 
 
-            {/* Mobile Menu */}
+      {/* Mobile Menu */}
       {isOpen && (
         <div className="absolute top-0 left-0 w-full h-[400px] bg-white flex flex-col items-center text-black justify-center space-y-6 shadow-lg md:hidden">
 
@@ -162,8 +194,8 @@ export default function Header() {
                       <input type="date" className="flex-1 border rounded px-3 py-2" />
                     </div>
                     <div className="d-block">
-                    <p className="mb-3 font-semibold">End Date</p>
-                    <input type="date" className="flex-1 border rounded px-3 py-2" />
+                      <p className="mb-3 font-semibold">End Date</p>
+                      <input type="date" className="flex-1 border rounded px-3 py-2" />
                     </div>
                   </div>
                 </div>

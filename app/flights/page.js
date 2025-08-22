@@ -14,7 +14,7 @@ export default function FlightsPage() {
       <FlightHeroSection />
       <WhyBook
         type="Flight"
-        image="/images/image (1).png"
+        image="/images/travel.jpg"
        
       />
       <AirFareDeals />

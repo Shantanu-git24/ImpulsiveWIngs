@@ -15,13 +15,13 @@ export default function HotelsPage() {
       <HotelSearchHero />
       <WhyBookHotel
         type="Hotels"
-        image="/images/image (1).png"
+        image="/images/1.jpg"
         
       />
       <HotelTabs />
       <div className="relative w-full h-[500px]">
         <Image
-          src="/images/wmremove-transformed-(47).jpg"
+          src="/images/3.jpg"
           alt="Banner"
           layout="fill"
           priority

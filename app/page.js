@@ -16,12 +16,13 @@ import Footer from './components/Footer';
 import TourFilterBar from './components/TourFilter';
 import LayoutWrapper from './components/LayoutWrapper';
 import { useState, useEffect } from 'react';
+import Link from "next/link";
 
 
 export default function Home() {
   const [bgImageUrl, setBgImageUrl] = useState('');
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchBanner = async () => {
       try {
         const res = await fetch("https://application.impulsivewings.in/api/banners");
@@ -51,7 +52,7 @@ export default function Home() {
     };
 
     fetchBanner();
-        const handleResize = () => fetchBanner();
+    const handleResize = () => fetchBanner();
     window.addEventListener("resize", handleResize);
 
     return () => window.removeEventListener("resize", handleResize);
@@ -59,19 +60,19 @@ export default function Home() {
 
 
   return (
-    
-      <main className="min-h-screen font-sans bg-white">
-        <LayoutWrapper>
+
+    <main className="min-h-screen font-sans bg-white">
+      <LayoutWrapper>
         {/* Hero Section */}
         <Header />
 
-          <div
-      className="relative bg-center bg-cover h-[650px] flex items-center justify-center px-4 bg-no-repeat
+        <div
+          className="relative bg-center bg-cover h-[650px] flex items-center justify-center px-4 bg-no-repeat
               sm:bg-cover w-full "
-      style={{
-        backgroundImage: bgImageUrl ? `url(${bgImageUrl})` : 'none',
-      }}
-    >
+          style={{
+            backgroundImage: bgImageUrl ? `url(${bgImageUrl})` : 'none',
+          }}
+        >
         </div>
 
         {/* Info Section */}
@@ -101,7 +102,7 @@ export default function Home() {
           </div>
 
           <div>
-            <h4 className="text-[22px] text-cyan-600 font-medium ">Let&apos; Go Together</h4>
+            <h4 className="text-[24px] text-cyan-600 font-medium " style={{ fontFamily: 'Montez, cursive',}}>Get to Know Us</h4>
             <h2 className="text-[22px] font-semibold mb-2 leading-tight">Plan Your Trip With us</h2>
             <p className="text-[15px] text-gray-600 mb-3">At ImpulsiveWings, we make holiday planning effortless and exciting. From the moment you dream of a getaway to the day you return, we handle every detail:</p>
 
@@ -113,8 +114,8 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[17px] font-semibold">Discover</h3>
-                  <p className="text-base text-gray-600">Get inspired with personalized destination ideas.</p>
+                  <h3 className="text-[15px] font-semibold">Discover</h3>
+                  <p className="text-[13px] text-gray-600">Get inspired with personalized destination ideas.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
@@ -124,46 +125,50 @@ export default function Home() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[17px] font-semibold">Plan</h3>
-                  <p className="text-base text-gray-600">Receive a custom itinerary tailored to your style and budget or be part of Fixed itinerary ( Group Tours)</p>
+                  <h3 className="text-[15px] font-semibold">Plan</h3>
+                  <p className="text-[13px] text-gray-600">Receive a custom itinerary tailored to your style and budget or be part of Fixed itinerary ( Group Tours)</p>
                 </div>
               </div>
-               <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4">
                 <div className="bg-cyan-100 p-2 rounded-full">
                   <svg className="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6l4 2" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[17px] font-semibold">Book</h3>
-                  <p className="text-base text-gray-600">We secure everything: flights, stays, experiences, and more.</p>
+                  <h3 className="text-[15px] font-semibold">Book</h3>
+                  <p className="text-[13px] text-gray-600">We secure everything: flights, stays, experiences, and more.</p>
                 </div>
               </div>
-               <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4">
                 <div className="bg-cyan-100 p-2 rounded-full">
                   <svg className="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6l4 2" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[17px] font-semibold">Prepare</h3>
-                  <p className="text-base text-gray-600">Travel tips, packing lists, and pre-trip support included.</p>
+                  <h3 className="text-[15px] font-semibold">Prepare</h3>
+                  <p className="text-[13px] text-gray-600">Travel tips, packing lists, and pre-trip support included.</p>
                 </div>
               </div>
-               <div className="flex items-start space-x-4">
+              <div className="flex items-start space-x-4">
                 <div className="bg-cyan-100 p-2 rounded-full">
                   <svg className="h-6 w-6 text-cyan-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6l4 2" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-[17px] font-semibold">Travel</h3>
-                  <p className="text-base text-gray-600">Enjoy 24/7 support while you explore the world.</p>
+                  <h3 className="text-[15px] font-semibold">Travel</h3>
+                  <p className="text-[13px] text-gray-600">Enjoy 24/7 support while you explore the world.</p>
                 </div>
               </div>
-              {/* <div>
-                <button className='bg-[#0094da] text-white p-2 border-r-emerald-50'>Know More</button>
-              </div> */}
+              <div>
+                <Link href="/contact">
+                  <button className="bg-[#0094da] text-white px-5 py-2 rounded-lg shadow-md hover:bg-[#007bb5] transition-all duration-300 hover:scale-105">
+                    Know More
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -191,8 +196,8 @@ export default function Home() {
         <Kolkata />
         <UpcomingSlider />
         <Footer />
-        </LayoutWrapper>
-      </main>
-    
+      </LayoutWrapper>
+    </main>
+
   );
 }
